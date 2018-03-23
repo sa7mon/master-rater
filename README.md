@@ -1,6 +1,5 @@
 # Readme
 
-
 ## Instructions to run app on Cloud9
 
 1. Clone the app to a Cloud9 instance
