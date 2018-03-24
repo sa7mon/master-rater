@@ -147,3 +147,18 @@ seed_users = Array [
 seed_users.each do |a| 
     User.create!(a)
 end
+
+def userId(userName) 
+  return User.where("username = '#{userName}'").first.id
+end
+
+seed_ratings = Array[
+  {:user_id => userId('dan'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
+  {:user_id => userId('dan'), :album_id => albumId('Winter Forever'), :rating => 4},
+  {:user_id => userId('ikthedar'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
+  {:user_id => userId('aaron'), :album_id => albumId('Winter Forever'), :rating => 3},
+]
+
+seed_ratings.each do |a|
+  Rating.create!(a)
+end
