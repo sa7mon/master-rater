@@ -45,9 +45,6 @@ seed_genres = Array[
   {:name => 'Emo'},
   {:name => 'Fuzz Folk'},
   {:name => 'Folk Punk'},
-#   {:name => ''},
-#   {:name => ''},
-#   {:name => ''},
 #   {:name => ''}
 ]
 
@@ -97,7 +94,8 @@ seed_albums = Array[
   :label => 'Asian Man Records', :total_time => '00:25:12', 
   :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Folk Punk')}
   
-  # {:name => '', :release_date => '', :label => '', :total_time => '', :artist_id => artistId('')}
+  # {:name => '', :release_date => '', :label => '', :total_time => '', 
+  # :artist_id => artistId(''), :genre_id => genreId('')}
 ]
 
 seed_albums.each do |a|
@@ -129,4 +127,23 @@ seed_tracks = Array[
 
 seed_tracks.each do |a|
   Track.create!(a)
+end
+
+seed_users = Array [
+  # bcrypt('password') = $2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu
+  
+  {:username => 'dan', :password_hash => '$2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu',
+  :biography => "I'm Dan."},
+  {:username => 'ikthedar', :password_hash => '$2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu',
+  :biography => "I'm Ikthedar."},
+  {:username => 'aaron', :password_hash => '$2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu',
+  :biography => "I'm Aaron."},
+  {:username => 'ayodele', :password_hash => '$2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu',
+  :biography => "I'm Ayodele."},
+  
+  # {:username => '', :password_hard => '', :biography => ''}
+]
+
+seed_users.each do |a| 
+    User.create!(a)
 end
