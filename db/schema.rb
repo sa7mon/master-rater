@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324145816) do
+ActiveRecord::Schema.define(version: 20180324151839) do
+
+  create_table "albums", force: :cascade do |t|
+    t.date    "release_date"
+    t.string  "label"
+    t.string  "name"
+    t.string  "total_time"
+    t.integer "artist_id",    null: false
+  end
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
