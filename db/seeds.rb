@@ -70,29 +70,29 @@ seed_albums = Array[
   :label => 'Independent', :total_time => '00:51:00', 
   :artist_id => artistId('Run the Jewels'), :genre_id => genreId('Rap')},
   
-  {:name => 'Winter Forever', :release_date => '08-11-2011', 
-  :label => 'Run For Cover Records', :total_time => '00:37:16', 
-  :artist_id => artistId('Seahaven'), :genre_id => genreId('Pop Rock')},
-  
-  {:name => 'Charmer', :release_date => '30-05-2014', 
-  :label => 'Run For Cover Records', :total_time => '00:38:01', 
-  :artist_id => artistId('Tigers Jaw'), :genre_id => genreId('Indie Rock')},
-
-  {:name => 'This Couch Is Long & Full of Friendship', :release_date => '27-05-2013', 
-  :label => 'Kind of Like Records', :total_time => '00:26:25', 
-  :artist_id => artistId('Tiny Moving Parts'), :genre_id => genreId('Emo')},
-
-  {:name => 'In the Aeroplane Over the Sea', :release_date => '20-01-1998', 
-  :label => 'Merge Records', :total_time => '00:39:54', 
-  :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Fuzz Folk')},
-  
   {:name => 'Empty Days and Sleepless Nights', :release_date => '08-03-2011', 
   :label => 'Bridge Nine Records', :total_time => '00:49:12', 
   :artist_id => artistId('Defeater'), :genre_id => genreId('Hardcore')},
   
+  {:name => 'In the Aeroplane Over the Sea', :release_date => '20-01-1998', 
+  :label => 'Merge Records', :total_time => '00:39:54', 
+  :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Fuzz Folk')},
+  
   {:name => 'People Who Can Eat People', :release_date => '11-09-2007', 
   :label => 'Asian Man Records', :total_time => '00:25:12', 
-  :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Folk Punk')}
+  :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Folk Punk')},
+  
+  {:name => 'Winter Forever', :release_date => '08-11-2011', 
+  :label => 'Run For Cover Records', :total_time => '00:37:16', 
+  :artist_id => artistId('Seahaven'), :genre_id => genreId('Pop Rock')},
+  
+  # {:name => 'Charmer', :release_date => '30-05-2014', 
+  # :label => 'Run For Cover Records', :total_time => '00:38:01', 
+  # :artist_id => artistId('Tigers Jaw'), :genre_id => genreId('Indie Rock')},
+
+  # {:name => 'This Couch Is Long & Full of Friendship', :release_date => '27-05-2013', 
+  # :label => 'Kind of Like Records', :total_time => '00:26:25', 
+  # :artist_id => artistId('Tiny Moving Parts'), :genre_id => genreId('Emo')},
   
   # {:name => '', :release_date => '', :label => '', :total_time => '', 
   # :artist_id => artistId(''), :genre_id => genreId('')}
@@ -121,6 +121,34 @@ seed_tracks = Array[
   {:name => 'Oh Mama', :album_id => albumId('Run The Jewels 3'), :duration => '3:37', :album_order => '12'},  
   {:name => 'Thursday in the Danger Room', :album_id => albumId('Run The Jewels 3'), :duration => '4:23', :album_order => '13'},  
   {:name => 'A Report to the Shareholders / Kill Your Masters', :album_id => albumId('Run The Jewels 3'), :duration => '6:15', :album_order => '14'},  
+  
+  
+  {:name => 'Warm Blood Rush', :duration => '2:28', :album_order => '1', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'Dear Father', :duration => '2:51', :album_order => '2', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'Waves Crash, Clouds Roll', :duration => '2:39', :album_order => '3', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'Empty Glass', :duration => '3:32', :album_order => '4', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'No Kind of Home', :duration => '2:38', :album_order => '5', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'White Knuckles', :duration => '2:10', :album_order => '6', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'Cemetary Walls', :duration => '3:32', :album_order => '7', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'Quiet The Longing', :duration => '3:54', :album_order => '8', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'At Peace', :duration => '3:17', :album_order => '9', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'White Oak Doors', :duration => '5:47', :album_order => '10', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'But Breathing', :duration => '3:40', :album_order => '11', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'Brothers', :duration => '5:05', :album_order => '12', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => "I Don't Mind", :duration => '3:48', :album_order => '13', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+  {:name => 'Headstone', :duration => '2:57', :album_order => '14', :album_id => albumId('Empty Days and Sleepless Nights')}, 
+
+  {:album_order => '1', :name => 'The King Of Carrot Flowers Pt. One',  :duration => '2:06', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '2', :name => 'The King Of Carrot Flowers Pts. Two & Three',  :duration => '3:05', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '3', :name => 'In The Aeroplane Over The Sea',  :duration => '3:21', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '4', :name => 'Two-Headed Boy',  :duration => '4:26', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '5', :name => 'The Fool',  :duration => '1:49', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '6', :name => 'Holland, 1945',  :duration => '3:15', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '7', :name => 'Communist Daughter',  :duration => '1:54', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '8', :name => 'Oh Comely',  :duration => '8:18', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '9', :name => 'Ghost',  :duration => '4:09', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '10', :name => 'Untitled',  :duration => '2:15', :album_id => albumId('In the Aeroplane Over the Sea')},
+  {:album_order => '11', :name => 'Two-Headed Boy Pt. Two',  :duration => '5:15', :album_id => albumId('In the Aeroplane Over the Sea')},
   
   # {:name => '', :album_id => albumId(''), :duration => '', :album_order => ''},  
 ]
