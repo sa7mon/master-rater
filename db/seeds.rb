@@ -156,7 +156,9 @@ seed_ratings = Array[
   {:user_id => userId('dan'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
   {:user_id => userId('dan'), :album_id => albumId('Winter Forever'), :rating => 4},
   {:user_id => userId('ikthedar'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
-  {:user_id => userId('aaron'), :album_id => albumId('Winter Forever'), :rating => 3},
+  {:user_id => userId('aaron'), :album_id => albumId('Winter Forever'), :rating => 3}
+  
+  # {:user_id => userId(''), :album_id => albumId(''), :rating => 0}
 ]
 
 seed_ratings.each do |a|
