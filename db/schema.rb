@@ -11,20 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324151839) do
+ActiveRecord::Schema.define(version: 20180324175529) do
 
   create_table "albums", force: :cascade do |t|
-    t.date    "release_date"
-    t.string  "label"
-    t.string  "name"
-    t.string  "total_time"
-    t.integer "artist_id",    null: false
+    t.date     "release_date"
+    t.string   "label"
+    t.string   "name",         null: false
+    t.string   "total_time"
+    t.integer  "genre_id",     null: false
+    t.integer  "artist_id",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name", null: false
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.integer  "album_id",    null: false
+    t.string   "duration"
+    t.integer  "album_order", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
