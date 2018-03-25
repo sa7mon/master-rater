@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'albums/show'
+
   get 'albums/index'
 
   get 'pages/new'
