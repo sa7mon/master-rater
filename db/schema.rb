@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 20180324182429) do
   create_table "albums", force: :cascade do |t|
     t.date     "release_date"
     t.string   "label"
-    t.string   "name",         null: false
+    t.string   "name",           null: false
     t.string   "total_time"
-    t.integer  "genre_id",     null: false
-    t.integer  "artist_id",    null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "genre_id",       null: false
+    t.integer  "artist_id",      null: false
+    t.string   "musicbrainz_id", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "artists", force: :cascade do |t|

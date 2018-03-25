@@ -12,6 +12,7 @@ class CreateAlbums < ActiveRecord::Migration
       t.integer "artist_id", :null => false  # artist_id NOT NULL
       t.foreign_key :artist, :id => :artist_id  # FK artist_id -> artist.id
       
+      t.string  "musicbrainz_id", :null => false
       t.timestamps :null => false
     end
   end
