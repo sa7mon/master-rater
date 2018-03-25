@@ -80,7 +80,7 @@ seed_albums = Array[
   
   {:name => 'People Who Can Eat People', :release_date => '11-09-2007', 
   :label => 'Asian Man Records', :total_time => '00:25:12', 
-  :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Folk Punk')},
+  :artist_id => artistId('Andrew Jackson Jihad'), :genre_id => genreId('Folk Punk')},
   
   {:name => 'Winter Forever', :release_date => '08-11-2011', 
   :label => 'Run For Cover Records', :total_time => '00:37:16', 

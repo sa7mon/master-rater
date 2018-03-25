@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'albums/index'
+
   get 'pages/new'
 
   get 'pages/create'
@@ -32,6 +34,8 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  # resources :albums
+  get 'albums/index'
 
   # Example resource route with options:
   #   resources :products do
