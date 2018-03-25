@@ -68,23 +68,28 @@ seed_albums = Array[
   
   {:name => 'Run The Jewels 3', :release_date => '25-12-2016', 
   :label => 'Independent', :total_time => '00:51:00', 
-  :artist_id => artistId('Run the Jewels'), :genre_id => genreId('Rap')},
+  :artist_id => artistId('Run the Jewels'), :genre_id => genreId('Rap'),
+  :musicbrainz_id => '386a689f-7ec4-4c4f-8a0c-fef18124a25f'},
   
   {:name => 'Empty Days and Sleepless Nights', :release_date => '08-03-2011', 
   :label => 'Bridge Nine Records', :total_time => '00:49:12', 
-  :artist_id => artistId('Defeater'), :genre_id => genreId('Hardcore')},
+  :artist_id => artistId('Defeater'), :genre_id => genreId('Hardcore'),
+  :musicbrainz_id => 'c62ce5af-8e5e-4be2-b3b6-8917b4c81cc8'},
   
   {:name => 'In the Aeroplane Over the Sea', :release_date => '20-01-1998', 
   :label => 'Merge Records', :total_time => '00:39:54', 
-  :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Fuzz Folk')},
+  :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Fuzz Folk'),
+  :musicbrainz_id => 'fe0183b9-7526-4ad5-8483-dae3dfdb3d30'},
   
   {:name => 'People Who Can Eat People', :release_date => '11-09-2007', 
   :label => 'Asian Man Records', :total_time => '00:25:12', 
-  :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Folk Punk')},
+  :artist_id => artistId('Andrew Jackson Jihad'), :genre_id => genreId('Folk Punk'),
+  :musicbrainz_id => '565cdcdb-e066-4eb4-871c-fa252dc850cf'},
   
   {:name => 'Winter Forever', :release_date => '08-11-2011', 
   :label => 'Run For Cover Records', :total_time => '00:37:16', 
-  :artist_id => artistId('Seahaven'), :genre_id => genreId('Pop Rock')},
+  :artist_id => artistId('Seahaven'), :genre_id => genreId('Pop Rock'),
+  :musicbrainz_id => '80cf0227-b96a-491c-9097-84c55d18f050'},
   
   # {:name => 'Charmer', :release_date => '30-05-2014', 
   # :label => 'Run For Cover Records', :total_time => '00:38:01', 

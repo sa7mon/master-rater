@@ -1,0 +1,20 @@
+%h1 All Albums
+
+%table#albums
+    %thead 
+        %tr
+            %th Artist 
+            %th Album Title
+            %th Total Runtime
+            %th Release Date
+            %th Label
+            %th Genre
+    %tbody
+        - @albums.each do |album|
+            %tr
+                %td= album.artist.name
+                %td= link_to album.name, album_path(album)
+                %td= album.total_time
+                %td= album.release_date
+                %td= album.label
+                %td= album.genre.name

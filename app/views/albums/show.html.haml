@@ -1,0 +1,57 @@
+%h1= @album.name
+
+
+%h2 Album Info
+
+%table#albums
+    %tbody
+        %tr
+            %td 
+                %strong Artist Name
+            %td= @album.artist.name
+        %tr
+            %td 
+                %strong Album Name
+            %td= @album.name
+        %tr
+            %td 
+                %strong Duration
+            %td= @album.total_time
+        %tr
+            %td 
+                %strong Release Date
+            %td= @album.release_date
+        %tr 
+            %td 
+                %strong Label
+            %td= @album.label
+        %tr
+            %td 
+                %strong Genre Name
+            %td= @album.genre.name
+
+%h2 Tracks
+%table#tracks
+    %thead
+        %th #
+        %th Title
+        %th Duration
+    %tbody
+        - @tracks.each do |track|
+            %tr
+                %td= track.album_order
+                %td= track.name
+                %td= track.duration
+
+%h2 Ratings
+%table#ratings
+    %thead
+        %th User
+        %th Rating
+        %th Last Updated
+    %tbody
+        - @ratings.each do |rating|
+            %tr
+                %td= rating.user.username
+                %td= rating.rating
+                %td= rating.updated_at

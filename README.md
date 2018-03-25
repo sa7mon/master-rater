@@ -26,22 +26,22 @@
 ## Creating a new route, controller and haml view
 * Creating the route:
 	Modifying the /config/routes.rb file:
-	Examlple: 
-	```root 'pages#show```
-	```root``` is the subdirectory to follow
-	```pages``` is the controller 
-	```show``` is the action to perform
+	Example: 
+	1. ```root 'pages#show```
+	1. ```root``` is the subdirectory to follow
+	1. ```pages``` is the controller 
+	1. ```show``` is the action to perform
 
 * Creating a new controller for the route
 	Running the following command will give us a new controller and .erb files for our route:
-	```rails generate controller pages new create update edit destroy index show```
-	```rails generate controller``` should stay unmodified
-	```pages``` is the route name to create the controller for
-	```new``` specifies that we want to create a new controller
-	```create update edit destroy index show``` are the actions our controller will have
+	1. ```rails generate controller pages new create update edit destroy index show```
+	1. ```rails generate controller``` should stay unmodified
+	1. ```pages``` is the route name to create the controller for
+	1. ```new``` specifies that we want to create a new controller
+	1. ```create update edit destroy index show``` are the actions our controller will have
 
 * Converting default controller generated .erb to .haml files
-	Run the following rake ```rake haml:erb2haml```
-	Enter 'y' when prompted to remove the .erb files
+	1. Run the following rake command ```rake haml:erb2haml```
+	1. Enter 'y' when prompted to remove the .erb files
 
 

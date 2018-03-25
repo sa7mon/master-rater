@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   
+  resources :albums, only: [:index, :show]
+  resources :artists, only: [:index, :show]
+  # get 'artists/index'
+
+  # get 'artists/show'
+
+  # get 'albums/show'
+
+  # get 'albums/index'
+
   get 'pages/new'
 
   get 'pages/create'
@@ -32,6 +42,9 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  
+  
+  # get 'albums/index'
 
   # Example resource route with options:
   #   resources :products do

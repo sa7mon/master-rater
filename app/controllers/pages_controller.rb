@@ -15,8 +15,10 @@ class PagesController < ApplicationController
   end
 
   def index
+    @myControllerData = "Hello World"
   end
 
   def show
+    @myControllerData = "Hello World"
   end
 end
