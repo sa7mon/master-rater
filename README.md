@@ -41,7 +41,7 @@
 	1. ```create update edit destroy index show``` are the actions our controller will have
 
 * Converting default controller generated .erb to .haml files
-	1. Run the following rake ```rake haml:erb2haml```
+	1. Run the following rake command ```rake haml:erb2haml```
 	1. Enter 'y' when prompted to remove the .erb files
 
 
