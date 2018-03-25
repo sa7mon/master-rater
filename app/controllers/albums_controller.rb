@@ -6,5 +6,7 @@ class AlbumsController < ApplicationController
   
   def show
      @album = Album.joins(:artist, :genre).find(params[:id])
+     @tracks = Track.where(album_id: params[:id])
+     @ratings = Rating.where(album_id: params[:id])
   end
 end
