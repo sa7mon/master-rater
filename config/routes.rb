@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  
+  get 'pages/new'
+
+  get 'pages/create'
+
+  get 'pages/update'
+
+  get 'pages/edit'
+
+  get 'pages/destroy'
+
+  get 'pages/index'
+
+  get 'pages/show'
+
+  # pages Controller - main Action
+  # '/' uses the 'pages' controller by default to use the 'GET' action 'show'
+  root 'pages#show' # http://guides.rubyonrails.org/routing.html#using-root
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
