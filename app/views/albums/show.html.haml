@@ -52,6 +52,6 @@
     %tbody
         - @ratings.each do |rating|
             %tr
-                %td= rating.user_id
+                %td= rating.user.username
                 %td= rating.rating
                 %td= rating.updated_at
