@@ -31,6 +31,10 @@
             %td= @album.genre.name
 
 %h2 Tracks
+%p= debug(@tracks)
+
+// - @tracks.each do |track|
+//     %p= track["title"]
 %table#tracks
     %thead
         %th #
@@ -39,9 +43,9 @@
     %tbody
         - @tracks.each do |track|
             %tr
-                %td= track.album_order
-                %td= track.name
-                %td= track.duration
+                %td= track["position"]
+                %td= track["title"]
+                %td= '%.2f' % (track["length"]/60000)
 
 %h2 Ratings
 %table#ratings
