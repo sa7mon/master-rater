@@ -10,38 +10,49 @@ class AlbumsController < ApplicationController
     @albums = Album.joins(:artist, :genre)
   end
   
+  def convert_ms(milliseconds)
+    # https://stackoverflow.com/a/40488097
+    return '' unless milliseconds
+
+    hours, milliseconds   = milliseconds.divmod(1000 * 60 * 60)
+    minutes, milliseconds = milliseconds.divmod(1000 * 60)
+    seconds, milliseconds = milliseconds.divmod(1000)
+    seconds = seconds.to_s.rjust(2, '0')
+    "#{minutes}:#{seconds}"
+  end
+  
   def show
+     require 'json'
+     
      @album = Album.joins(:artist, :genre).find(params[:id])
     # @tracks = Track.where(album_id: params[:id])
      @ratings = Rating.joins(:user).where(album_id: params[:id])
      # https://github.com/rest-client/rest-client
      # https://musicbrainz.org/doc/Cover_Art_Archive/API#.2Frelease.2F.7Bmbid.7D.2F
-     url = 'https://musicbrainz.org/ws/2/release/80cf0227-b96a-491c-9097-84c55d18f050?inc=recordings&fmt=json'
+     url = "https://musicbrainz.org/ws/2/release/#{@album.musicbrainz_id}?inc=recordings&fmt=json"
 
-    # require 'net/http'
-     require 'json'
-    # require 'uri'
-       
-    # url = 'https://api.spotify.com/v1/search?type=artist&q=tycho'
+     baseCoverArtUrl = 'https://coverartarchive.org/release/'
+    @coverUrl = baseCoverArtUrl + @album.musicbrainz_id + "/front-500"
+    coverArtRes = RestClient.get(@coverUrl, headers={'User-Agent' => 'Master-Rater/1.0 (salmon@protonmail.ch)'})
+    # resHeaders = JSON.parse(coverArtRes.headers)
     
-    # uri = URI.parse(url)
-    # puts "HOST: " + uri.host
-    # https = Net::HTTP.new(uri.host,uri.port)
-    # https.use_ssl = true
-    # req = Net::HTTP::Post.new(uri.path, initheader = {'User-Agent' => 'Master-Rater/1.0 (salmon@protonmail.ch)'})
-    # res = https.request(req)
+    # @coverArt = ''
+    if coverArtRes.code == 307
+      @coverArt = coverArtRes.headers[:Location]
+    else
+      @coverArt = coverArtRes.headers
+    end
     
     res = RestClient.get(url, headers={'User-Agent' => 'Master-Rater/1.0 (salmon@protonmail.ch)'})
         
+    @jsonTracks = JSON.parse(res)["media"][0]["tracks"]
     
-    # uri = URI(url)
-    # req = Net::HTTP.get.new(uri, initheader = {'User-Agent' => 'Master-Rater/1.0 (salmon@protonmail.ch)'})
-    # # Net::HTTP::Post.new
-    # res = https.request(req)
-    # @spotifyResponse = res)
-    @tracks = JSON.parse(res)["media"][0]["tracks"]
+    @tracks = Array.new
     
-    # @tracksRequest = res
-     
+    @jsonTracks.each do |track|
+      # Conver duration from ms to m:ss
+      @tracks.push([track["position"], track["title"], convert_ms(track["length"].to_i)])
+    end
+    
   end
 end
