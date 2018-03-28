@@ -7,29 +7,65 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 seed_artists = [
-    {:name => 'Tigers Jaw'},
-    {:name => 'Defeater'},
-    {:name => 'La Dispute'},
-    {:name => 'Camp Cope'},
-    {:name => 'Seahaven'},
+    {:name => 'Tigers Jaw',
+      :biography => "A band whose music has matured from pop-punk to emo to indie rock, Tigers Jaw have earned a growing following for their melodic but insistent music and emotionally powerful lyrics. 
+      Tigers Jaw were formed in 2005 in Scranton, Pennsylvania by guitarist and vocalist Adam McIlwee and guitarist and vocalist Ben Walsh. The two began working up material and recruited bassist Dennis Mishko and drummer Mike May; a keyboard player dropped out before the group's first show, 
+      and through mutual friends, Brianna Collins was invited to join the lineup. Several months later, Mike May left the band, and Pat Brier took over on drums, solidifying the band's membership. In 2006, Tigers Jaw recorded their first album, Belongs to the Dead, on a portable recording rig 
+      in an attic where the band rehearsed; the album was released by Summersteps Records, and in 2008, they went into the studio with producer and engineer Joe Loftus to cut their second full-length, simply titled Tigers Jaw, for Photobooth Records. Tigers Jaw's popularity began to spread, despite the group's touring opportunities being limited by the members' academic commitments, and in 2010, 
+      they signed with Run for Cover Records, which brought out their third album, Two Worlds. (Run for Cover would also reissue the band's first two albums.) A split EP with the group Balance & Composure was also released the same year, and Tigers Jaw would release split singles with like-minded bands the Sidekicks, Tiny Empires, and Code Orange over the next few years. "
+    },
+    {:name => 'Defeater',
+      :biography => "Boston, Massachusetts hardcore group Defeater originally formed in 2004, and, after some lineup changes, eventually landed on vocalist Derek Archambault, guitarists Jay Maas and Jake Woodruff, bassist Mike Poulin, and drummer Joe Longobardi by 2008. Conceptually-inclined from the very beginning, their debut album, Travels (2008), introduced a narrative which chronicled an unnamed, post-WWII
+      working-class family and their complicated, dysfunctional relationships. Initially signed to Topshelf, Defeater moved to Bridge Nine Records to release their next two LPs, Empty Days & Sleepless Nights (2011) and Letters Home (2013), each of which provided a new chapter in the fictional family's overarching storyline. In 2015, the band signed with Epitaph Records to release their fourth album, Abandoned."
+    },
+    {:name => 'La Dispute',
+     :biography => 'La Dispute is four close friends from the Upper Midwest with a firm passion for the concept of music and art as a medium for making new friends. As a result, La Dispute makes (or strives to make) music that is both artistically, technically, and emotionally engaging in hopes of establishing legitimate connections with any and all interested people, while encouraging dialogue between those people and themselves about things in life that truly matter and that truly last. 
+     La Dispute also carries a firm passion for the relevance of a live show, both for the bands involved and for the people in attendance, and will go to the grave believing that the environment created when strangers come together despite their differences to celebrate one important thing is invaluable and should not under any circumstances be taken for granted.'
+    },
+    {:name => 'Camp Cope',
+      :biography => "As a regular of the Australian singer/songwriter circuit and with a handful of solo singles under her belt, Melbourne native Georgia Maq decided to bring together Kelly Hellmrich on bass and Sarah Thompson on drums to flesh out her solo project. With Camp Cope's 
+      angst-ridden sound sitting between the confessional folk-punk of fellow Melbourner Wil Wagner and the lo-fi pop-punk of Alabama's P.S. Eliot, the band secured themselves support slots with the likes of the Hotelier, Andrew Jackson Jihad, and Waxahatchee, as well as playing their own headline shows. Wasting no time, the trio entered the studio and by the end of the year had recorded their debut album with Sam Johnson (the Smith Street Band, the Bennies). Released on Poison City in April 2016, their eight-track self-titled debut earned them critical acclaim for its 
+      confessional storytelling and entered the ARIA albums chart at number 36. After a successful joint tour of Australia at the end of 2016 with Philadelphia's Cayetana, Poison City issued a limited split single that featured new material by both bands. 2017 saw the group on tour once again, with two sold-out shows at the Sydney Opera House, as well as select U.S. dates. At the end of the year, they returned to the studio to record their sophomore album. The resulting How to Socialise & Make Friends was issued in early 2018 on Poison City and Run for Cover."
+    },
+    {:name => 'Seahaven',
+      :biography => "With a sound that blends the emotional narratives of post-hardcore and emo with the sense of space and dynamics of post-rock, Seahaven are a band forging their own path through the genre's increasingly homogeneous waters. Based out of Torrance, California, Seahaven have built a sound for themselves that seeks to surprise the listener at every turn, often turning on a dime as it shifts from drifting atmospherics to driving punk. Seahaven unveiled their sound in 2010 with the release of their Ghost EP, and followed up the next year with their full-length debut, Winter Forever. After hitting the road with Touché Amore, the band got to work on its sophomore full-length, reaching a new creative high point with the release of Reverie Lagoon: Music for Escapism Only in 2014."
+    },
     # {:name => 'Manchester Orchestra'},
-    {:name => 'Ratatat'},
-    {:name => 'Andrew Jackson Jihad'},
+    {:name => 'Ratatat',
+      :biography => "Formerly known as Cherry, New York's rock-meets-electronica duo Ratatat feature multi-instrumentalist/programmer Evan Mast and guitarist Mike Stroud. Mast was also the brains behind the pretty laptop pop of E*vax, and with his brother E*Rock he ran the indie electronic label Audio Dregs. Stroud also played, in the studio and on tour, with artists including Ben Kweller and Dashboard Confessional. Between these duties (and Mast's job as a graphic designer), the duo found time to work on their collaboration. In his bedroom studio, Mast worked on beats and song ideas that he gave to Stroud to develop while the guitarist was on the road. Though Mast and Stroud began working together in 2001, things really began to come together for the pair in 2003: in May, while they were still called Cherry, they played their first gig; by September they changed their name to Ratatat; and that November they issued their first single, which had a limited run of 1,100 copies, on Audio Dregs. Dates with Franz Ferdinand, Interpol, and Battles followed, and Ratatat signed to XL Records. The duo's self-titled debut album arrived in spring 2004, coinciding with another round of dates with bands including !!!, Electrelane, and Tortoise. "
+    },
+    {:name => 'Andrew Jackson Jihad',
+      :biography => "Comprising core members Sean Bonnette (acoustic guitar) and Ben Gallaty (upright bass), Andrew Jackson Jihad, aka AJJ, is a folk-punk outfit from Phoenix, Arizona. The Jihad formed in 2004, when frontman Bonnette was still a teenager, and the duo quickly began writing humorously explicit music with macabre themes. Early topics ran the gamut from self-sacrifice to childhood drug addiction, all sung in a frantic manner with acoustic instrumentation. Their self-released debut, Candy Cigarettes & Cap Guns, appeared in 2005, after which a number of self-released demos and EPs attracted the attention of Plan-It-X Records. The label issued a split release with Andrew Jackson Jihad and the similarly styled Ghost Mice in 2007. "
+    },
     # {:name => 'Adventures'},
-    {:name => 'American Football'},
-    {:name => 'Arcade Fire'},
+    {:name => 'American Football',
+      :biography => "American Football comprise vocalist/bassist/guitarist Mike Kinsella, guitarist Steve Holmes, and drummer/trumpet player Steve Lamos. Kinsella's emo/post-rock pedigree includes stints with bands like Cap'n Jazz and Joan of Arc; American Football share a similar aesthetic, blending jazzy tempos, pop hooks, and earnest vocals into their sound. The group released its self-titled debut EP in 1998 and its eponymous full-length in 1999 before abruptly breaking up after only a few years of existence. Kinsella went on to perform solo as Owen, as well as with his brother Tim in the equally elusive rock group Owls. American Football's legacy would grow following their dissolution, with new fans discovering their album as it went through various re-pressings over the years. "
+    },
+    {:name => 'Arcade Fire',
+      :biography => "A combination of indie rock muscle and theatrical, unapologetic bombast turned Arcade Fire into indie royalty in the early 2000s. Originally comprised of Régine Chassagne, Richard Parry, Tim Kingsbury, and brothers William and Win Butler, the group formed during the summer of 2003, after Win spotted Chassagne singing jazz standards at a Montreal art exhibit. The grandson of famed swing-era bandleader Alvino Rey, Win was quickly charmed by Chassagne's performance, leading the two to launch a songwriting partnership. Romance followed shortly thereafter, and the duo expanded its sound by gathering Parry on organ, Kingsbury on bass, and Win Butler's younger brother, William, on synthesizer and percussion. Drawing from the bandmates' varied influences, Arcade Fire began mining an eclectic mix of bossa nova, punk, French chanson, and classically tinged pop music, referencing everything from U2's passion to David Bowie's eclecticism in the process. "
+    },
     # {:name => 'Beastie Boys'},
-    {:name => 'Bill Withers'},
-    {:name => 'Run the Jewels'},
+    {:name => 'Bill Withers',
+      :biography => 'Songwriter/singer/guitarist Bill Withers is best remembered for the classic "Lean on Me" and his other million-selling singles "Ain\'t No Sunshine" and "Use Me," but he has a sizable cache of great songs to his credit. Al Jarreau recorded an entire CD of Withers\' songs on Tribute to Bill Withers (Culture Press 1998). His popular radio-aired LP track from Still Bill, "Who Is He? (And What Is He to You?)," was a 1974 R&B hit for Creative Source. '
+    },
+    {:name => 'Run the Jewels',
+      :biography => "A one-off project that quickly evolved into a hip-hop superduo, Run the Jewels feature rappers El-P and Killer Mike. Formed after El-P produced Killer Mike's 2012 album, R.A.P. Music, the duo released Run the Jewels in 2013, an album credited to Killer Mike and El-P and released on Fool's Gold. Critically popular and with a sizable fan base to boot, Run the Jewels quickly evolved into a going concern when their sophomore effort, RTJ2, landed in 2014. A crowdfunded remix version of the album with all the music replaced by samples of cats was released in 2015 as Meow the Jewels. It featured guest appearances from Portishead's Geoff Barrow, Dan the Automator, and Internet sensation Lil Bub. The group ended the year with the single \"Rubble Kings (Dynamite on the Street),\" released by the Adult Swim label. In 2016, the duo announced RTJ3, which was set for release in early 2017. However, on Christmas Eve 2016, they unexpectedly uploaded the album as another free download. Featuring appearances by Joi, Trina, Boots, Danny Brown, Tunde Adebimpe, Kamasi Washington, and the return of Zack de la Rocha, RTJ3 debuted in the Billboard Top 40 and at number eight on the R&B/hip-hop chart. "
+    },
     # {:name => 'Modern Baseball'},
-    {:name => 'Neutral Milk Hotel'},
+    {:name => 'Neutral Milk Hotel',
+      :biography => "The self-described \"fuzz-folk\" project Neutral Milk Hotel was one of the primary outgrowths of the Elephant 6 Recording Company collective, a coterie of like-minded lo-fi indie groups -- including the Apples in Stereo, the Olivia Tremor Control, and Secret Square -- who shared musicians, ideas, and sensibilities. While ranging in sound and concept from solo acoustic work to full-band performances, Neutral Milk Hotel essentially remained the work of Jeff Mangum, a singer/songwriter from the remote town of Ruston, Louisiana. Ruston was also home to Robert Schneider (later of the Apples), as well as Will Cullen Hart and Bill Doss (who formed the Olivia Tremor Control); throughout high school, the aspiring musicians -- all influenced by the likes of the Beatles, the Beach Boys, the Zombies, Pink Floyd, and Sonic Youth -- exchanged home recordings and played in each other's bands. "
+    },
     # {:name => 'Old Gray'},
     # {:name => 'Pianos Become The Teeth'},
     # {:name => 'Radiator Hospital'},
-    {:name => 'Right Away, Great Captain!'},
+    {:name => 'Right Away, Great Captain!',
+      :biography => "Right Away, Great Captain! is the solo side project of Manchester Orchestra's lead singer, Andy Hull. Debut album The Bitter End was released on January 14, 2007 via Favorite Gentlemen Recordings and is available on the band's MySpace. The follow-up, The Eventually Home, was released on Tuesday November 11, 2008, also on Hull's label Favorite Gentlemen Recordings. On Wednesday, February 10, 2010, he announced the third and final installment of his solo project's trilogy, The Church of the Good Thief, which was released in 2012."
+    },
     # {:name => 'The World is a Beautiful Place and I am No Longer
               # Afraid to Die'}, 
-    {:name => 'Tiny Moving Parts'},
+    {:name => 'Tiny Moving Parts',
+      :biography => "Based out of Benson, Minnesota, emotionally charged screamo/math rock unit Tiny Moving Parts was formed around the talents of Dylan Mattheisen, William Chevalier, and Matthew Chevalier while the trio was still in high school. The band issued its debut EP, Moving to Antarctica, in 2010, followed by the Kind of Like Records-issued full-length This Couch Is Long & Full in 2013. The trio inked a deal with Triple Crown the following year and released their sophomore long-player Pleasant Living. Returning to the studio with This Couch Is Long producer Greg Lindholm, the trio set about recording their third album, Celebrate. Slated for a mid-2016 release, the album would be their second release for Triple Crown and their debut for U.K. label Big Scary Monsters. Tiny Moving Parts returned in 2018 with their fourth record Swell, which was announced with the release of lead single \"Caution.\""
+    },
     # {:name => 'Hostage Calm'}
 ]
 
@@ -179,6 +215,11 @@ seed_albums = Array[
   :label => 'Favorite Gentleman Records', :total_time => '00:50:21', 
   :artist_id => artistId('Right Away, Great Captain!'), :genre_id => genreId('Folk'),
   :musicbrainz_id => '940808b8-01d3-4962-8da9-da8e29151fbf'},
+  
+  {:name => 'Swell', :release_date => '26-01-2018', 
+  :label => 'Triple Crown Records', :total_time => '00:31:57', 
+  :artist_id => artistId('Tiny Moving Parts'), :genre_id => genreId('Emo'),
+  :musicbrainz_id => '0b25ecd8-7a76-43a6-b86b-db7b8fc74665'},
 
   
   # {:name => '', :release_date => '', :label => '', :total_time => '', 

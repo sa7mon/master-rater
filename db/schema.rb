@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180324182429) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
+    t.text     "biography"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,5 +1,17 @@
+%p
+    =link_to('Home', root_path) 
+    \/ 
+    =link_to('Artists', artists_path)
+    \/
+    =@artist.name
+    
+
 %h1= @artist.name
 
+%h2 About
+%p= @artist.biography
+
+%h2 Albums
 %ul
     - @albums.each do |album|
         %li= link_to album.name, album_path(album)
