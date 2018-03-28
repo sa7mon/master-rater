@@ -12,25 +12,25 @@ seed_artists = [
     {:name => 'La Dispute'},
     {:name => 'Camp Cope'},
     {:name => 'Seahaven'},
-    {:name => 'Manchester Orchestra'},
+    # {:name => 'Manchester Orchestra'},
     {:name => 'Ratatat'},
     {:name => 'Andrew Jackson Jihad'},
-    {:name => 'Adventures'},
+    # {:name => 'Adventures'},
     {:name => 'American Football'},
     {:name => 'Arcade Fire'},
-    {:name => 'Beastie Boys'},
+    # {:name => 'Beastie Boys'},
     {:name => 'Bill Withers'},
     {:name => 'Run the Jewels'},
-    {:name => 'Modern Baseball'},
+    # {:name => 'Modern Baseball'},
     {:name => 'Neutral Milk Hotel'},
-    {:name => 'Old Gray'},
-    {:name => 'Pianos Become The Teeth'},
-    {:name => 'Radiator Hospital'},
-    {:name => 'Right Away, Great Captain'},
-    {:name => 'The World is a Beautiful Place and I am No Longer
-              Afraid to Die'}, 
+    # {:name => 'Old Gray'},
+    # {:name => 'Pianos Become The Teeth'},
+    # {:name => 'Radiator Hospital'},
+    {:name => 'Right Away, Great Captain!'},
+    # {:name => 'The World is a Beautiful Place and I am No Longer
+              # Afraid to Die'}, 
     {:name => 'Tiny Moving Parts'},
-    {:name => 'Hostage Calm'}
+    # {:name => 'Hostage Calm'}
 ]
 
 seed_artists.each do |a|
@@ -45,6 +45,10 @@ seed_genres = Array[
   {:name => 'Emo'},
   {:name => 'Fuzz Folk'},
   {:name => 'Folk Punk'},
+  {:name => 'Folk'},
+  {:name => 'Indie Rock'},
+  {:name => 'Soul'},
+  {:name => 'Electronic'}
 #   {:name => ''}
 ]
 
@@ -71,33 +75,111 @@ seed_albums = Array[
   :artist_id => artistId('Run the Jewels'), :genre_id => genreId('Rap'),
   :musicbrainz_id => '386a689f-7ec4-4c4f-8a0c-fef18124a25f'},
   
+  {:name => 'Run The Jewels 2', :release_date => '24-10-2014', 
+  :label => 'Independent', :total_time => '00:39:02', 
+  :artist_id => artistId('Run the Jewels'), :genre_id => genreId('Rap'),
+  :musicbrainz_id => '8d5673a1-f435-4a02-9e32-8741397969c8'},
+  
   {:name => 'Empty Days and Sleepless Nights', :release_date => '08-03-2011', 
   :label => 'Bridge Nine Records', :total_time => '00:49:12', 
   :artist_id => artistId('Defeater'), :genre_id => genreId('Hardcore'),
   :musicbrainz_id => 'c62ce5af-8e5e-4be2-b3b6-8917b4c81cc8'},
   
+  {:name => 'Letters Home', :release_date => '16-07-2013', 
+  :label => 'Bridge Nine Records', :total_time => '00:34:03', 
+  :artist_id => artistId('Defeater'), :genre_id => genreId('Hardcore'),
+  :musicbrainz_id => '61474025-b76a-42f9-809e-5ac01a73439f'},
+  
   {:name => 'In the Aeroplane Over the Sea', :release_date => '20-01-1998', 
   :label => 'Merge Records', :total_time => '00:39:54', 
   :artist_id => artistId('Neutral Milk Hotel'), :genre_id => genreId('Fuzz Folk'),
-  :musicbrainz_id => 'fe0183b9-7526-4ad5-8483-dae3dfdb3d30'},
+  :musicbrainz_id => 'c6033275-4050-367d-884f-91d82e4e35dd'},
   
   {:name => 'People Who Can Eat People', :release_date => '11-09-2007', 
   :label => 'Asian Man Records', :total_time => '00:25:12', 
   :artist_id => artistId('Andrew Jackson Jihad'), :genre_id => genreId('Folk Punk'),
   :musicbrainz_id => '565cdcdb-e066-4eb4-871c-fa252dc850cf'},
   
+  {:name => 'Christmas Island', :release_date => '05-06-2014', 
+  :label => 'SideOneDummy Records', :total_time => '00:33:43', 
+  :artist_id => artistId('Andrew Jackson Jihad'), :genre_id => genreId('Folk Punk'),
+  :musicbrainz_id => '833a3c79-0280-436e-841b-e2d502350945'},
+  
   {:name => 'Winter Forever', :release_date => '08-11-2011', 
   :label => 'Run For Cover Records', :total_time => '00:37:16', 
-  :artist_id => artistId('Seahaven'), :genre_id => genreId('Pop Rock'),
+  :artist_id => artistId('Seahaven'), :genre_id => genreId('Indie Rock'),
   :musicbrainz_id => '80cf0227-b96a-491c-9097-84c55d18f050'},
   
-  # {:name => 'Charmer', :release_date => '30-05-2014', 
-  # :label => 'Run For Cover Records', :total_time => '00:38:01', 
-  # :artist_id => artistId('Tigers Jaw'), :genre_id => genreId('Indie Rock')},
+  {:name => 'Reverie Lagoon: Music for Escapism Only', :release_date => '25-03-2014', 
+  :label => 'Run For Cover Records', :total_time => '00:51:28', 
+  :artist_id => artistId('Seahaven'), :genre_id => genreId('Indie Rock'),
+  :musicbrainz_id => 'c0464441-6494-4156-b110-dcc751b48b93'},
+  
+  {:name => 'Charmer', :release_date => '30-05-2014', 
+  :label => 'Run For Cover Records', :total_time => '00:38:01', 
+  :artist_id => artistId('Tigers Jaw'), :genre_id => genreId('Indie Rock'),
+  :musicbrainz_id => '3dcbe39c-9b32-4ca5-9d36-35757eb6d020'},
+  
+  {:name => 'Belongs to the Dead', :release_date => '01-12-2013', 
+  :label => 'Run For Cover Records', :total_time => '00:24:21', 
+  :artist_id => artistId('Tigers Jaw'), :genre_id => genreId('Indie Rock'),
+  :musicbrainz_id => 'cf874470-4915-4c20-8686-ab954d2b606c'},
 
-  # {:name => 'This Couch Is Long & Full of Friendship', :release_date => '27-05-2013', 
-  # :label => 'Kind of Like Records', :total_time => '00:26:25', 
-  # :artist_id => artistId('Tiny Moving Parts'), :genre_id => genreId('Emo')},
+  {:name => 'Wildlife', :release_date => '04-10-2011', 
+  :label => 'No Sleep Records', :total_time => '00:57:42', 
+  :artist_id => artistId('La Dispute'), :genre_id => genreId('Hardcore'),
+  :musicbrainz_id => 'db01945e-9945-4166-8e89-62daeac038c5'},
+  
+  {:name => 'Somewhere at the Bottom of the River Between Vega and Altair', :release_date => '11-11-2008', 
+  :label => 'No Sleep Records', :total_time => '00:51:39', 
+  :artist_id => artistId('La Dispute'), :genre_id => genreId('Hardcore'),
+  :musicbrainz_id => '843314e2-e0b5-41f5-9093-cb010c9826ba'},
+  
+  {:name => 'How To Socialize and Make Friends', :release_date => '03-03-2018', 
+  :label => 'Run For Cover Records', :total_time => '00:38:10', 
+  :artist_id => artistId('Camp Cope'), :genre_id => genreId('Indie Rock'),
+  :musicbrainz_id => 'c481b60d-ecb5-4cef-a78c-2d58bd2e6854'},
+    
+  {:name => 'Funeral', :release_date => '14-09-2004', 
+  :label => 'Merge Records', :total_time => '00:48:00', 
+  :artist_id => artistId('Arcade Fire'), :genre_id => genreId('Indie Rock'),
+  :musicbrainz_id => '2c57dafb-3995-3d73-b1a6-4ef691dcab37'},
+  
+  {:name => 'Funeral', :release_date => '14-09-2004', 
+  :label => 'Merge Records', :total_time => '00:48:00', 
+  :artist_id => artistId('Arcade Fire'), :genre_id => genreId('Indie Rock'),
+  :musicbrainz_id => '2c57dafb-3995-3d73-b1a6-4ef691dcab37'},
+  
+  {:name => 'Just as I Am', :release_date => '13-05-1971', 
+  :label => 'Sussex', :total_time => '00:35:41', 
+  :artist_id => artistId('Bill Withers'), :genre_id => genreId('Soul'),
+  :musicbrainz_id => '7e0f7789-8410-44ba-8100-78dafcb8e158'},
+  
+  {:name => 'American Football', :release_date => '14-09-1999', 
+  :label => 'Polyvinyl', :total_time => '00:40:53', 
+  :artist_id => artistId('American Football'), :genre_id => genreId('Emo'),
+  :musicbrainz_id => 'e9b93107-b316-4880-a81f-acc4b8c10c65'},
+  
+  {:name => 'LP4', :release_date => '08-06-2010', 
+  :label => 'XL Recordings', :total_time => '00:42:43', 
+  :artist_id => artistId('Ratatat'), :genre_id => genreId('Electronic'),
+  :musicbrainz_id => 'c0416132-129a-42bc-8b39-422147a3fcf3'},
+  
+  {:name => 'Magnifique', :release_date => '17-07-2015', 
+  :label => 'XL Recordings', :total_time => '00:44:56', 
+  :artist_id => artistId('Ratatat'), :genre_id => genreId('Electronic'),
+  :musicbrainz_id => '92664345-1118-45a0-ac44-c54585e5aab7'},
+  
+  {:name => 'The Church of the Good Thief', :release_date => '10-06-2012', 
+  :label => 'Favorite Gentleman Records', :total_time => '00:38:40', 
+  :artist_id => artistId('Right Away, Great Captain!'), :genre_id => genreId('Folk'),
+  :musicbrainz_id => '80b4727b-38a2-41db-8565-312c4d0248ad'},
+  
+  {:name => 'The Bitter End', :release_date => '08-01-2006', 
+  :label => 'Favorite Gentleman Records', :total_time => '00:50:21', 
+  :artist_id => artistId('Right Away, Great Captain!'), :genre_id => genreId('Folk'),
+  :musicbrainz_id => '940808b8-01d3-4962-8da9-da8e29151fbf'},
+
   
   # {:name => '', :release_date => '', :label => '', :total_time => '', 
   # :artist_id => artistId(''), :genre_id => genreId('')}
@@ -109,57 +191,6 @@ end
 
 def albumId(albumName)
   return Album.where("name = '#{albumName}'").first.id
-end
-
-seed_tracks = Array[
-  {:name => 'Down', :album_id => albumId('Run The Jewels 3'), :duration => '3:30', :album_order => '1'},  
-  {:name => 'Talk To Me', :album_id => albumId('Run The Jewels 3'), :duration => '2:31', :album_order => '2'},  
-  {:name => 'Legend Has It', :album_id => albumId('Run The Jewels 3'), :duration => '3:26', :album_order => '3'},  
-  {:name => 'Call Ticketron', :album_id => albumId('Run The Jewels 3'), :duration => '3:19', :album_order => '4'},  
-  {:name => 'Hey Kids', :album_id => albumId('Run The Jewels 3'), :duration => '3:12', :album_order => '5'},  
-  {:name => 'Stay Gold', :album_id => albumId('Run The Jewels 3'), :duration => '3:28', :album_order => '6'},  
-  {:name => "Don't Get Captured", :album_id => albumId('Run The Jewels 3'), :duration => '3:12', :album_order => '7'},  
-  {:name => 'Thieves!', :album_id => albumId('Run The Jewels 3'), :duration => '4:02', :album_order => '8'},  
-  {:name => '2100', :album_id => albumId('Run The Jewels 3'), :duration => '4:01', :album_order => '9'},  
-  {:name => 'Panther Like a Panther (Miracle Mix)', :album_id => albumId('Run The Jewels 3'), :duration => '3:41', :album_order => '10'},  
-  {:name => 'Everybody Stay Calm', :album_id => albumId('Run The Jewels 3'), :duration => '2:59', :album_order => '11'},  
-  {:name => 'Oh Mama', :album_id => albumId('Run The Jewels 3'), :duration => '3:37', :album_order => '12'},  
-  {:name => 'Thursday in the Danger Room', :album_id => albumId('Run The Jewels 3'), :duration => '4:23', :album_order => '13'},  
-  {:name => 'A Report to the Shareholders / Kill Your Masters', :album_id => albumId('Run The Jewels 3'), :duration => '6:15', :album_order => '14'},  
-  
-  
-  {:name => 'Warm Blood Rush', :duration => '2:28', :album_order => '1', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'Dear Father', :duration => '2:51', :album_order => '2', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'Waves Crash, Clouds Roll', :duration => '2:39', :album_order => '3', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'Empty Glass', :duration => '3:32', :album_order => '4', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'No Kind of Home', :duration => '2:38', :album_order => '5', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'White Knuckles', :duration => '2:10', :album_order => '6', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'Cemetary Walls', :duration => '3:32', :album_order => '7', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'Quiet The Longing', :duration => '3:54', :album_order => '8', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'At Peace', :duration => '3:17', :album_order => '9', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'White Oak Doors', :duration => '5:47', :album_order => '10', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'But Breathing', :duration => '3:40', :album_order => '11', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'Brothers', :duration => '5:05', :album_order => '12', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => "I Don't Mind", :duration => '3:48', :album_order => '13', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-  {:name => 'Headstone', :duration => '2:57', :album_order => '14', :album_id => albumId('Empty Days and Sleepless Nights')}, 
-
-  {:album_order => '1', :name => 'The King Of Carrot Flowers Pt. One',  :duration => '2:06', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '2', :name => 'The King Of Carrot Flowers Pts. Two & Three',  :duration => '3:05', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '3', :name => 'In The Aeroplane Over The Sea',  :duration => '3:21', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '4', :name => 'Two-Headed Boy',  :duration => '4:26', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '5', :name => 'The Fool',  :duration => '1:49', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '6', :name => 'Holland, 1945',  :duration => '3:15', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '7', :name => 'Communist Daughter',  :duration => '1:54', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '8', :name => 'Oh Comely',  :duration => '8:18', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '9', :name => 'Ghost',  :duration => '4:09', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '10', :name => 'Untitled',  :duration => '2:15', :album_id => albumId('In the Aeroplane Over the Sea')},
-  {:album_order => '11', :name => 'Two-Headed Boy Pt. Two',  :duration => '5:15', :album_id => albumId('In the Aeroplane Over the Sea')},
-  
-  # {:name => '', :album_id => albumId(''), :duration => '', :album_order => ''},  
-]
-
-seed_tracks.each do |a|
-  Track.create!(a)
 end
 
 seed_users = Array [
@@ -194,6 +225,14 @@ seed_ratings = Array[
   # {:user_id => userId(''), :album_id => albumId(''), :rating => 0}
 ]
 
-seed_ratings.each do |a|
-  Rating.create!(a)
+seed_users.each do |user|
+  seed_albums.each do |album|
+    a = {:user_id => userId(user[:username]), :album_id => albumId(album[:name]), :rating => rand(6)}
+    Rating.create!(a)
+  end
 end
+
+
+# seed_ratings.each do |a|
+#   Rating.create!(a)
+# end

@@ -1,8 +1,5 @@
 require 'rest-client'
-# require 'http'
-# require 'net/http'
-
-
+require 'json'
 
 class AlbumsController < ApplicationController
   def index
@@ -22,27 +19,25 @@ class AlbumsController < ApplicationController
   end
   
   def show
-     require 'json'
-     
      @album = Album.joins(:artist, :genre).find(params[:id])
     # @tracks = Track.where(album_id: params[:id])
      @ratings = Rating.joins(:user).where(album_id: params[:id])
+     
+     ratingSum = 0
+     @ratings.each do |rating|
+       ratingSum += rating[:rating]
+     end
+     
+     @avgRating = ratingSum / @ratings.length
+     
      # https://github.com/rest-client/rest-client
      # https://musicbrainz.org/doc/Cover_Art_Archive/API#.2Frelease.2F.7Bmbid.7D.2F
      url = "https://musicbrainz.org/ws/2/release/#{@album.musicbrainz_id}?inc=recordings&fmt=json"
 
      baseCoverArtUrl = 'https://coverartarchive.org/release/'
     @coverUrl = baseCoverArtUrl + @album.musicbrainz_id + "/front-500"
-    coverArtRes = RestClient.get(@coverUrl, headers={'User-Agent' => 'Master-Rater/1.0 (salmon@protonmail.ch)'})
-    # resHeaders = JSON.parse(coverArtRes.headers)
-    
-    # @coverArt = ''
-    if coverArtRes.code == 307
-      @coverArt = coverArtRes.headers[:Location]
-    else
-      @coverArt = coverArtRes.headers
-    end
-    
+    # coverArtRes = RestClient.get(@coverUrl, headers={'User-Agent' => 'Master-Rater/1.0 (salmon@protonmail.ch)'})
+
     res = RestClient.get(url, headers={'User-Agent' => 'Master-Rater/1.0 (salmon@protonmail.ch)'})
         
     @jsonTracks = JSON.parse(res)["media"][0]["tracks"]
@@ -53,6 +48,8 @@ class AlbumsController < ApplicationController
       # Conver duration from ms to m:ss
       @tracks.push([track["position"], track["title"], convert_ms(track["length"].to_i)])
     end
+    
+    
     
   end
 end
