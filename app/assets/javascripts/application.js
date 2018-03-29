@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+document.getElementById('artistsButton').onclick = function() {
+    window.location = '/artits/'; 
+}
