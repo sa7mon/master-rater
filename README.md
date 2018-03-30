@@ -44,4 +44,5 @@
 	1. Run the following rake command ```rake haml:erb2haml```
 	1. Enter 'y' when prompted to remove the .erb files
 
-
+## Helpful Articles
+* [http://tutorials.jumpstartlab.com/topics/better_views/erb_and_haml.html](http://tutorials.jumpstartlab.com/topics/better_views/erb_and_haml.html)
