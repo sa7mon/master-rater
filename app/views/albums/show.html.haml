@@ -1,3 +1,15 @@
+%nav.navbar.navbar-dark.bg-dark.navbar-expand-lg
+    %span.navbar-brand.mb-0.h1
+        Navbar
+    %ul.nav.nav-pills.nav-stacked
+        %li{:role => "presentation", :class => "active"}
+            %a{:href => "#"}
+                Home
+        %li{:role => "presentation"}
+            %a{:href => '#'}
+                Profile
+    
+        
 %p
     =link_to('Home', root_path) 
     \/ 

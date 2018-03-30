@@ -9,11 +9,10 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+// If something breaks, add back: //= require_tree . 
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 
 
 document.getElementById('artistsButton').onclick = function() {
