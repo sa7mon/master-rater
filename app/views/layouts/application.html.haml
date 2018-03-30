@@ -13,4 +13,15 @@
           :integrity =>"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl",
           :crossorigin => "anonymous"}
   %body
+  .sidenav
+    %nav.nav.flex-column.nav-pills
+      %a.navbar-brand{:href => "#"}
+        MasterRater
+      %a.nav-link.active{:href => "#"}
+        Active
+      %a.nav-link{:href => "#"}
+        Link
+      %a.nav-link{:href => "#"}
+        Link2
+  .main
     = yield
