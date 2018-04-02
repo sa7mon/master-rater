@@ -1,0 +1,12 @@
+%nav.breadcrumbs{"aria-label" => "breadcrumb"}
+    %ol.breadcrumb
+        %li.breadcrumb-item
+            =link_to('Home', root_path) 
+        %li.breadcrumb-item
+            User
+%h2 User: #{@user.username}
+
+.row
+    .col-md-12
+        %p 
+            =@user.biography

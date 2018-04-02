@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
   
+  # get 'users/update'
+
+  # get 'users/edit'
+
+  # get 'users/show'
+
   # get 'search/show'
 
   resources :albums, only: [:index, :show]
   resources :artists, only: [:index, :show]
   resources :search, only: [:index, :show]
+  resources :users, only: [:index, :show]
   # get 'artists/index'
 
   # get 'artists/show'
