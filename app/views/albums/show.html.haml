@@ -12,63 +12,59 @@
 .container 
     .row
         .col-md-6
-            %h2 Average Rating: #{@avgRating}
-            %h2 Album Info
-
-            .panel.panel-default
-                .panel-body
+            %h3 Average Rating: #{@avgRating}
+            %ul.list-group
+                %li.list-group-item
+                    %strong Artist Name:
+                    = @album.artist.name
                 
-                %strong Artist Name
-                = @album.artist.name
-                
-                %strong 
-                    Album Name
+                %li.list-group-item
+                    %strong Album Name:
                     = @album.name
-        
-                %strong 
-                    Duration
+                
+                %li.list-group-item
+                    %strong Duration:
                     = @album.total_time
-            
-        //     %strong 
-        //         Release Date
-        //         = @album.release_date
-        
-        //     %strong 
-        //         Label
-        //         = @album.label
-        
-        //     %strong 
-        //         Genre Name
-        //         = @album.genre.name
-        // .col-md-6
-        
-        //     %h2 Tracks
-
-        //     %table#tracks
-        //         %thead
-        //             %th #
-        //             %th Title
-        //             %th Duration
-        //         %tbody
-        //             - @tracks.each do |track|
-        //                 %tr
-        //                     %td= track[0]
-        //                     %td= track[1]
-        //                     %td= track[2]
+                
+                %li.list-group-item
+                    %strong Release Date:
+                    = @album.release_date
+                
+                %li.list-group-item
+                    %strong Label:
+                    = @album.label
+                
+                %li.list-group-item
+                    %strong Genre Name:
+                    = @album.genre.name
                     
-        // %td
-        //     %h2 Cover Art
-        //     =image_tag @coverUrl
+        .col-md-6
+        
+            %h2 Tracks
+
+            %table.table.table-striped
+                %thead.thead-dark
+                    %th #
+                    %th Title
+                    %th Duration
+                %tbody
+                    - @tracks.each do |track|
+                        %tr
+                            %td= track[0]
+                            %td= track[1]
+                            %td= track[2]
+            %h2 Cover Art
+            =image_tag @coverUrl
             
-        //     %h2 Ratings
-        //     %table#ratings
-        //         %thead
-        //             %th User
-        //             %th Rating
-        //             %th Last Updated
-        //         %tbody
-        //             - @ratings.each do |rating|
-        //                 %tr
-        //                     %td= rating.user.username
-        //                     %td= rating.rating
-        //                     %td= rating.updated_at
+            %h2 Ratings
+            %table#ratings
+                %thead
+                    %th User
+                    %th Rating
+                    %th Last Updated
+                %tbody
+                    - @ratings.each do |rating|
+                        %tr
+                            %td= rating.user.username
+                            %td= rating.rating
+                            %td= rating.updated_at

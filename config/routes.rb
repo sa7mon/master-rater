@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
+  # get 'search/show'
+
   resources :albums, only: [:index, :show]
   resources :artists, only: [:index, :show]
+  resources :search, only: [:index, :show]
   # get 'artists/index'
 
   # get 'artists/show'
@@ -9,16 +12,6 @@ Rails.application.routes.draw do
   # get 'albums/show'
 
   # get 'albums/index'
-
-  get 'pages/new'
-
-  get 'pages/create'
-
-  get 'pages/update'
-
-  get 'pages/edit'
-
-  get 'pages/destroy'
 
   get 'pages/index'
 
