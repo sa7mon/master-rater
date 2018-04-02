@@ -15,13 +15,17 @@
   %body
   .sidenav
     %nav.nav.flex-column.nav-pills
-      %a.navbar-brand{:href => "#"}
+      %a.navbar-brand{:href => "/"}
         MasterRater
+      %form_tag
+        = form_tag(search_index_path, :method => "get", id: "search-form") do
+          = text_field_tag :search, params[:search], placeholder: "Search Albums"
+          = submit_tag "Search", :name => nil
       %a.nav-link.active{:href => "#"}
         Active
-      %a.nav-link{:href => "#"}
-        Link
-      %a.nav-link{:href => "#"}
-        Link2
+      %a.nav-link{:href => "/albums"}
+        Albums
+      %a.nav-link{:href => "/artists"}
+        Artists
   .main
     = yield
