@@ -29,6 +29,10 @@ class AlbumsController < ApplicationController
      end
      
      @avgRating = ratingSum / @ratings.length
+     @ratingStars = ""
+     for i in 0..@avgRating
+       @ratingStars += '<i class="fas fa-star"></i>'
+     end
      
      # https://github.com/rest-client/rest-client
      # https://musicbrainz.org/doc/Cover_Art_Archive/API#.2Frelease.2F.7Bmbid.7D.2F
