@@ -37,11 +37,25 @@
                 %li.list-group-item
                     %strong Genre Name:
                     = @album.genre.name
-                    
+            
+            %h3 Ratings
+            %table.table.table-striped
+                %thead.thead-light
+                    %th User
+                    %th Rating
+                    %th Last Updated
+                %tbody
+                    - @ratings.each do |rating|
+                        %tr
+                            %td= rating.user.username
+                            %td= rating.rating
+                            %td= rating.updated_at
         .col-md-6
-        
+            %h2 Cover Art
+            =image_tag @coverUrl
+    .row
+        .col-md-12
             %h2 Tracks
-
             %table.table.table-striped
                 %thead.thead-dark
                     %th #
@@ -53,18 +67,4 @@
                             %td= track[0]
                             %td= track[1]
                             %td= track[2]
-            %h2 Cover Art
-            =image_tag @coverUrl
             
-            %h2 Ratings
-            %table#ratings
-                %thead
-                    %th User
-                    %th Rating
-                    %th Last Updated
-                %tbody
-                    - @ratings.each do |rating|
-                        %tr
-                            %td= rating.user.username
-                            %td= rating.rating
-                            %td= rating.updated_at
