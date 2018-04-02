@@ -53,7 +53,9 @@
                 %tbody
                     - @ratings.each do |rating|
                         %tr
-                            %td= rating.user.username
+                            // %td= rating.user.username
+                            %td
+                                =link_to(rating.user.username, user_path(rating.user.id))
                             %td= rating.rating
                             %td= rating.updated_at
         .col-md-6
