@@ -1,9 +1,12 @@
-%p
-    =link_to('Home', root_path) 
-    \/ 
-    =link_to('Artists', artists_path)
-    \/
-    =@artist.name
+%nav.breadcrumbs{"aria-label" => "breadcrumb"}
+    %ol.breadcrumb
+        %li.breadcrumb-item
+            =link_to('Home', root_path) 
+        %li.breadcrumb-item
+            =link_to('Artists', artists_path)
+            // Artists
+        %li.breadcrumb-item
+            =@artist.name
     
 
 %h1= @artist.name

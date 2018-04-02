@@ -1,6 +1,9 @@
-%p
-    =link_to('Home', root_path) 
-    \/ Albums
+%nav.breadcrumbs{"aria-label" => "breadcrumb"}
+    %ol.breadcrumb
+        %li.breadcrumb-item
+            =link_to('Home', root_path) 
+        %li.breadcrumb-item
+            Albums
 
 %h1 All Albums
 
