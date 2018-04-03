@@ -8,9 +8,9 @@ class SearchController < ApplicationController
     # Vulnerable to SQL Injection :)
     @albums = Album.where("name LIKE ?", "%#{search}%")
     # TODO better failure case than dumping everything
-    if @albums.length < 1 # Only care about failures to search
-        @albums = Album.joins(:artist, :genre)
-    end
+    # if @albums.length < 1 # Only care about failures to search
+    #     @albums = Album.joins(:artist, :genre)
+    # end
   end
   
   def convert_ms(milliseconds)

@@ -1,24 +1,26 @@
 %p
     =link_to('Home', root_path) 
     \/ Albums
-
-%h1 All Albums
-
-%table#albums
-    %thead 
-        %tr
-            %th Artist 
-            %th Album Title
-            %th Total Runtime
-            %th Release Date
-            %th Label
-            %th Genre
-    %tbody
-        - @albums.each do |album|
+- if @albums.empty?
+    %h1 Failed to find any albums containing your search string :(
+- else
+    %h1 All Albums
+    
+    %table#albums
+        %thead 
             %tr
-                %td= link_to album.artist.name, artist_path(album.artist)
-                %td= link_to album.name, album_path(album)
-                %td= album.total_time
-                %td= album.release_date
-                %td= album.label
-                %td= album.genre.name
+                %th Artist 
+                %th Album Title
+                %th Total Runtime
+                %th Release Date
+                %th Label
+                %th Genre
+        %tbody
+            - @albums.each do |album|
+                %tr
+                    %td= link_to album.artist.name, artist_path(album.artist)
+                    %td= link_to album.name, album_path(album)
+                    %td= album.total_time
+                    %td= album.release_date
+                    %td= album.label
+                    %td= album.genre.name
