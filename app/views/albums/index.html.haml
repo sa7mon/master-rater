@@ -5,23 +5,25 @@
         %li.breadcrumb-item
             Albums
 
-%h1 All Albums
+.container
+    .row
+        .col-md-12
+            %h1 All Albums
 
-%table#albums
-    %thead 
-        %tr
-            %th Artist 
-            %th Album Title
-            %th Total Runtime
-            %th Release Date
-            %th Label
-            %th Genre
-    %tbody
-        - @albums.each do |album|
-            %tr
-                %td= link_to album.artist.name, artist_path(album.artist)
-                %td= link_to album.name, album_path(album)
-                %td= album.total_time
-                %td= album.release_date
-                %td= album.label
-                %td= album.genre.name
+            // %table#albums
+            %table.table.table-striped
+                %thead.thead-dark
+                    %tr
+                        %th Artist 
+                        %th Album Title
+                        %th Runtime
+                        %th Released
+                        %th Genre
+                %tbody
+                    - @albums.each do |album|
+                        %tr
+                            %td= link_to album.artist.name, artist_path(album.artist)
+                            %td= link_to album.name, album_path(album)
+                            %td= album.total_time
+                            %td= album.release_date
+                            %td= album.genre.name
