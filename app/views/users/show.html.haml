@@ -4,9 +4,42 @@
             =link_to('Home', root_path) 
         %li.breadcrumb-item
             User
-%h2 User: #{@user.username}
 
 .row
-    .col-md-12
+    .col-md-3.offset-md-1
+
+        %figure.figure
+            %img.figure-image.image-fluid.rounded{:src => 'https://place.cat/c/200/200'}
+            %figcaption.figure-caption
+                Joined: March 2016
+    .col-md-8
+        %h2 User: #{@user.username}
         %p 
             =@user.biography
+.row.spaced-top-row
+    .col-md-6
+        %h3 Top Rated Albums
+        %table.table.table-striped
+            %thead.thead-dark
+                %th Album
+                %th Rating
+            %tbody
+                %tr
+                    %td
+                        Album 1
+                    %td
+                        :plain
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    .col-md-6
+        %h3 Recently Rated Albums
+        %table.table.table-striped
+            %thead.thead-dark
+                %th Album
+                %th Rating
+            %tbody
+                %tr
+                    %td
+                        Album 1
+                    %td
+                        :plain
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
