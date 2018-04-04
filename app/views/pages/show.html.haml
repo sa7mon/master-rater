@@ -1,13 +1,57 @@
-%head
-%body.background
-    .mainContainer
-        %br
-        %br
-        %br
-        .highestRated
-            Highest Rated Content goes here
-        %br
-        %br
-        %br
-        .recentlyAdded
-            Recently Added Content goes here
+.container
+    .row
+        .col-md-12
+            %h3 Recent Ratings
+            
+    .row.justify-content-center
+        // .card-deck.col-md-8
+        - 3.times do
+            .card{:style => '10rem'}
+                %img.card-img-top{:src => 'https://place.cat/c/200/200',
+                                    :alt => 'Card image cap'}
+                .card-header
+                    // Header
+                    %i.fas.fa-star
+                    %i.fas.fa-star
+                    %i.fas.fa-star
+                    %i.fas.fa-star-half
+                .card-body
+                    %h5.card-title
+                        %a{:href=>"#"} Album Name
+                    %p.card-text
+                        By: 
+                        %a{:href=>"#"} User
+                    
+                .card-footer.text-muted
+                    12 minutes ago
+
+    .row
+        .col-md-12
+            %h3 Recent Albums
+            
+            .row.justify-content-center
+                .card-deck
+                    - 4.times do
+        
+                        .card{:style => '18rem'}
+                            %img.card-img-top{:src => 'https://place.cat/c/200/200',
+                                                :alt => 'Card image cap'}
+                            .card-header
+                                // Header
+                                %i.fas.fa-star
+                                %i.fas.fa-star
+                                %i.fas.fa-star
+                                %i.fas.fa-star-half
+                            .card-body
+                                %h5.card-title
+                                    Album
+                                %p.card-text
+                                    %strong 
+                                        By: 
+                                    Artist
+                                    %br
+                                    %strong
+                                        Label: 
+                                    No Sleep Records
+                            .card-footer.text-muted
+                                5 days ago
