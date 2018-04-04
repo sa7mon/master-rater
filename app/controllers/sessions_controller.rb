@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
     skip_before_filter :set_current_user
     def create
-        @user = Albumrater.where(uid: auth_hash[:uid], provider: auth_hash[:provider]).first_or_create
+        @user = Albumrater.where(uid: auth_hash[:uid], provider: auth_hash[:provider], nickname: auth_hash["info"]["nickname"]).first_or_create
         session[:user_id] = @user.id
         redirect_to root_path
     end

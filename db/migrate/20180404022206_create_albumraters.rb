@@ -3,7 +3,8 @@ class CreateAlbumraters < ActiveRecord::Migration
     create_table :albumraters do |t|
       t.string :name
       t.string :provider
-      t.string :uid
+      t.string :uid, null: false
+      t.string :nickname
 
       t.timestamps null: false
     end
