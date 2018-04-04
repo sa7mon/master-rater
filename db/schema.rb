@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 20180404022206) do
   create_table "albumraters", force: :cascade do |t|
     t.string   "name"
     t.string   "provider"
-    t.string   "uid",        null: false
+    t.string   "uid",         null: false
     t.string   "nickname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "albums", force: :cascade do |t|

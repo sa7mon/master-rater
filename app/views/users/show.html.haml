@@ -9,14 +9,13 @@
     .col-md-3.offset-md-1
 
         %figure.figure
-            %img.figure-image.image-fluid.rounded{:src => 'https://place.cat/c/200/200'}
+            %img.figure-image.image-fluid.rounded{:src => @user.image}
             %figcaption.figure-caption
                 Joined: March 2016
     .col-md-8
-        %h2 User: 
-        / %h2 User: #{@user.username}
+        %h2=@user.nickname
         %p 
-            =@user.biography
+            =@user.description
 .row.spaced-top-row
     .col-md-6
         %h3 Top Rated Albums
