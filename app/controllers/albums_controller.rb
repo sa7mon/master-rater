@@ -20,7 +20,7 @@ class AlbumsController < ApplicationController
   
   def show
      @album = Album.joins(:artist, :genre).find(params[:id])
-    # @tracks = Track.where(album_id: params[:id])
+    
      @ratings = Rating.joins(:user).where(album_id: params[:id])
      
      ratingSum = 0
@@ -28,7 +28,9 @@ class AlbumsController < ApplicationController
        ratingSum += rating[:rating]
      end
      
-     @avgRating = ratingSum / @ratings.length
+     
+    # @avgRating = ratingSum / @ratings.length  # UNCOMMENT AFTER FIGURING OUT USERS
+     @avgRating = 4
      @ratingStars = ""
      for i in 0..@avgRating
        @ratingStars += '<i class="fas fa-star"></i>'
