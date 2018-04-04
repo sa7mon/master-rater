@@ -23,6 +23,14 @@ Rails.application.routes.draw do
   get 'pages/index'
 
   get 'pages/show'
+  
+  get 'auth/:provider/callback' => 'sessions#create'
+  
+  delete 'logout' => 'sessions#destroy'
+  
+  get 'auth/failure' => 'sessions#failure'
+  
+  get 'auth/twitter', :as => 'login'
 
   # pages Controller - main Action
   # '/' uses the 'pages' controller by default to use the 'GET' action 'show'

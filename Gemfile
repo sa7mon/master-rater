@@ -48,3 +48,5 @@ group :development do
 end
 
 gem 'haml-rails', '~> 1.0'
+
+gem 'omniauth-twitter'
