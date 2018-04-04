@@ -22,7 +22,7 @@
   %body
   .sidenav
     %nav.nav.flex-column.nav-pills
-      %a.navbar-brand{:href => "/"}
+      %a.nav-link{:href => "/"}
         MasterRater
       %a.nav-link{:href => "/albums"}
         Albums
@@ -32,7 +32,10 @@
         = form_tag(search_index_path, :method => "get", id: "search-form") do
           = text_field_tag :search, params[:search], placeholder: "Search Albums"
           = submit_tag "Search", :name => nil
+    .bottom
+      .bottom-content
+        = render :partial => 'sessions/login'
       
   .main
-    = render :partial => 'sessions/login'
+    
     = yield
