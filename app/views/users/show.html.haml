@@ -44,7 +44,7 @@
                 - @ratings.each do |rating|
                     %tr
                         %td
-                            =rating.album.name
+                            =link_to(rating.album.name, rating.album)
                         %td
                             - rating.rating.times do
                                 :plain
