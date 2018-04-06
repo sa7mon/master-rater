@@ -19,8 +19,13 @@ class AlbumsController < ApplicationController
   end
   
   def show
-     @album = Album.joins(:artist, :genre).find(params[:id])
-    
+     @album = Album.joins(:artist, :genre).where(id: params[:id])
+     
+     if @album.empty?
+        @album = nil
+        return
+     end
+        
      @ratings = Rating.joins(:albumrater).where(album_id: params[:id])
      
      ratingSum = 0

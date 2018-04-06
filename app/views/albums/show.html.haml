@@ -1,88 +1,97 @@
-
-%nav.breadcrumbs{"aria-label" => "breadcrumb"}
-    %ol.breadcrumb
-        %li.breadcrumb-item
-            =link_to('Home', root_path) 
-        %li.breadcrumb-item
-            =link_to(@album.artist.name, artist_path(@album.artist))
-        %li.breadcrumb-item.active{"aria-current" => "page"}
-            =@album.name
-%h1= @album.name
-
-.container 
-    .row
-        .col-md-6
-            // .row
-            //     .col-md-6
-            //         %h3 Your rating: 
-            //     .col-md-6
-            // %input#input-2.rating-loading{:value => "2.5"}
-            // <input id="input-2" name="input-2" value="2.5" class="rating-loading">
-
-            %ul.list-group
-                %li.list-group-item
-                    %strong Artist Name:
-                    = @album.artist.name
+- if @album == nil
+    %nav.breadcrumbs{"aria-label" => "breadcrumb"}
+        %ol.breadcrumb
+            %li.breadcrumb-item
+                =link_to('Home', root_path) 
+            %li.breadcrumb-item
+                =link_to('Albums', albums_path)
+    %h1 Failed to find an album
+    %img(src="https://img.buzzfeed.com/buzzfeed-static/static/2015-06/24/19/campaign_images/webdr09/this-may-be-this-cutest-saddest-cat-ever-2-4626-1435188004-0_dblbig.jpg")
+- else
+    %nav.breadcrumbs{"aria-label" => "breadcrumb"}
+        %ol.breadcrumb
+            %li.breadcrumb-item
+                =link_to('Home', root_path) 
+            %li.breadcrumb-item
+                =link_to(@album.artist.name, artist_path(@album.artist))
+            %li.breadcrumb-item.active{"aria-current" => "page"}
+                =@album.name
+    %h1= @album.name
+    
+    .container 
+        .row
+            .col-md-6
+                // .row
+                //     .col-md-6
+                //         %h3 Your rating: 
+                //     .col-md-6
+                // %input#input-2.rating-loading{:value => "2.5"}
+                // <input id="input-2" name="input-2" value="2.5" class="rating-loading">
+    
+                %ul.list-group
+                    %li.list-group-item
+                        %strong Artist Name:
+                        = @album.artist.name
+                    
+                    %li.list-group-item
+                        %strong Album Name:
+                        = @album.name
+                    
+                    %li.list-group-item
+                        %strong Duration:
+                        = @album.total_time
+                    
+                    %li.list-group-item
+                        %strong Release Date:
+                        = @album.release_date
+                    
+                    %li.list-group-item
+                        %strong Label:
+                        = @album.label
+                    
+                    %li.list-group-item
+                        %strong Genre Name:
+                        = @album.genre.name
+                %h3 
+                    Average Rating:
+                    %i.fas.fa-star
+                    %i.fas.fa-star
+                    %i.fas.fa-star
+                    %i.fas.fa-star-half
                 
-                %li.list-group-item
-                    %strong Album Name:
-                    = @album.name
+                %h3 Ratings
+                %table.table.table-striped
+                    %thead.thead-light
+                        %th User
+                        %th Rating
+                        %th Last Updated
+                    %tbody
+                        - @ratings.each do |rating|
+                            %tr
+                                %td
+                                    =link_to(rating.albumrater.nickname, user_path(rating.albumrater.nickname))
+                                %td= rating.rating
+                                %td
+                                    = time_ago_in_words(rating.updated_at)
+                                    ago
+            .col-md-6
                 
-                %li.list-group-item
-                    %strong Duration:
-                    = @album.total_time
+                    
+                =image_tag @coverUrl
+        .row
+            .col-md-12
+                %h2 Tracks
+                %table.table.table-striped
+                    %thead.thead-dark
+                        %th #
+                        %th Title
+                        %th Duration
+                    %tbody
+                        - @tracks.each do |track|
+                            %tr
+                                %td= track[0]
+                                %td= track[1]
+                                %td= track[2]
                 
-                %li.list-group-item
-                    %strong Release Date:
-                    = @album.release_date
-                
-                %li.list-group-item
-                    %strong Label:
-                    = @album.label
-                
-                %li.list-group-item
-                    %strong Genre Name:
-                    = @album.genre.name
-            %h3 
-                Average Rating:
-                %i.fas.fa-star
-                %i.fas.fa-star
-                %i.fas.fa-star
-                %i.fas.fa-star-half
-            
-            %h3 Ratings
-            %table.table.table-striped
-                %thead.thead-light
-                    %th User
-                    %th Rating
-                    %th Last Updated
-                %tbody
-                    - @ratings.each do |rating|
-                        %tr
-                            %td
-                                =link_to(rating.albumrater.nickname, user_path(rating.albumrater.nickname))
-                            %td= rating.rating
-                            %td
-                                = time_ago_in_words(rating.updated_at)
-                                ago
-        .col-md-6
-            
-                
-            =image_tag @coverUrl
-    .row
-        .col-md-12
-            %h2 Tracks
-            %table.table.table-striped
-                %thead.thead-dark
-                    %th #
-                    %th Title
-                    %th Duration
-                %tbody
-                    - @tracks.each do |track|
-                        %tr
-                            %td= track[0]
-                            %td= track[1]
-                            %td= track[2]
-            
-.container
-    %input#input-2.rating-loading{:value => "2.5"}
+    .container
+        %input#input-2.rating-loading{:value => "2.5"}
