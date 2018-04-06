@@ -12,9 +12,6 @@ class UsersController < ApplicationController
     # https://pbs.twimg.com/profile_images/671043988489539584/eel_irZJ_400x400.jpg
     
     @ratings = Rating.joins(:albumrater, :album).where("albumraters.nickname = ?", params[:id]).order(created_at: :desc)
-    # puts "########################"
-    # puts @ratings.first
-    
-    
+    @ratings2 = Rating.joins(:albumrater, :album).where("albumraters.nickname = ?", params[:id]).order(rating: :desc)
   end
 end
