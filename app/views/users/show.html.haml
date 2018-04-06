@@ -37,10 +37,16 @@
             %thead.thead-dark
                 %th Album
                 %th Rating
+                %th Rated on
             %tbody
-                %tr
-                    %td
-                        Album 1
-                    %td
-                        :plain
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                - @ratings.each do |rating|
+                    %tr
+                        %td
+                            =rating.album.name
+                        %td
+                            - rating.rating.times do
+                                :plain
+                                    <i class="fas fa-star"></i>
+                        %td
+                            = time_ago_in_words(rating.updated_at)
+                            ago

@@ -10,5 +10,11 @@ class UsersController < ApplicationController
     @image = @user.image.sub!("_normal", "_200x200").sub!("http://", "https://")
     # http://pbs.twimg.com/profile_images/671043988489539584/eel_irZJ_normal.jpg
     # https://pbs.twimg.com/profile_images/671043988489539584/eel_irZJ_400x400.jpg
+    
+    @ratings = Rating.joins(:albumrater, :album).where("albumraters.nickname = ?", params[:id]).order(created_at: :desc)
+    # puts "########################"
+    # puts @ratings.first
+    
+    
   end
 end
