@@ -273,23 +273,26 @@ def userId(userName)
   return User.where("username = '#{userName}'").first.id
 end
 
+def albumRaterId(nickname)
+  return Albumrater.where("nickname = '#{nickname}'").first.id
+end
+
 seed_ratings = Array[
-  {:user_id => userId('dan'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
-  {:user_id => userId('dan'), :album_id => albumId('Winter Forever'), :rating => 4},
-  {:user_id => userId('ikthedar'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
-  {:user_id => userId('aaron'), :album_id => albumId('Winter Forever'), :rating => 3}
+  {:user_id => albumRaterId('@bltjetpack'), :albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
+  {:user_id => albumRaterId('@jack'), :albumrater_id => albumRaterId('@jack'), :album_id => albumId('Winter Forever'), :rating => 4},
+  {:user_id => albumRaterId('@achillean'), :albumrater_id => albumRaterId('@achillean'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
+  {:user_id => albumRaterId('@chrissyteigen'), :albumrater_id => albumRaterId('@chrissyteigen'), :album_id => albumId('Winter Forever'), :rating => 3}
   
   # {:user_id => userId(''), :album_id => albumId(''), :rating => 0}
 ]
 
-seed_users.each do |user|
-  seed_albums.each do |album|
-    a = {:user_id => userId(user[:username]), :album_id => albumId(album[:name]), :rating => rand(6)}
-    Rating.create!(a)
-  end
-end
-
-
-# seed_ratings.each do |a|
-#   Rating.create!(a)
+# seed_users.each do |user|
+#   seed_albums.each do |album|
+#     a = {:user_id => userId(user[:username]), :album_id => albumId(album[:name]), :rating => rand(6)}
+#     Rating.create!(a)
+#   end
 # end
+
+seed_ratings.each do |a|
+  Rating.create!(a)
+end

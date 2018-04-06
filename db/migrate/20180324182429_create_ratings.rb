@@ -4,6 +4,7 @@ class CreateRatings < ActiveRecord::Migration
       t.integer :rating, :null => false
       
       t.integer :user_id, :null => false
+      t.integer :albumrater_id, :null => false
       t.foreign_key :user, :id => :user_id
       
       t.integer :album_id, :null => false

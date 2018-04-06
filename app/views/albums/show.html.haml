@@ -53,9 +53,8 @@
                 %tbody
                     - @ratings.each do |rating|
                         %tr
-                            // %td= rating.user.username
                             %td
-                                =link_to(rating.user.username, user_path(rating.user.id))
+                                =link_to(rating.albumrater.nickname, user_path(rating.albumrater.nickname))
                             %td= rating.rating
                             %td
                                 = time_ago_in_words(rating.updated_at)

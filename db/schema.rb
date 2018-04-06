@@ -48,11 +48,12 @@ ActiveRecord::Schema.define(version: 20180404022206) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.integer  "rating",     null: false
-    t.integer  "user_id",    null: false
-    t.integer  "album_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "rating",        null: false
+    t.integer  "user_id",       null: false
+    t.integer  "albumrater_id", null: false
+    t.integer  "album_id",      null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "tracks", force: :cascade do |t|

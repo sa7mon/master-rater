@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
   def show
      @album = Album.joins(:artist, :genre).find(params[:id])
     
-     @ratings = Rating.joins(:user).where(album_id: params[:id])
+     @ratings = Rating.joins(:albumrater).where(album_id: params[:id])
      
      ratingSum = 0
      @ratings.each do |rating|
