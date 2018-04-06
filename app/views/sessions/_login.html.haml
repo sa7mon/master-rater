@@ -1,6 +1,6 @@
 #login
   - if @current_user
-    %span.welcome Hi, @#{@current_user.nickname}!
+    %span.welcome Hi, #{@current_user.nickname}!
     %br
     = link_to 'Log Out', logout_path, method: "delete"
   - else
