@@ -57,7 +57,9 @@
                             %td
                                 =link_to(rating.user.username, user_path(rating.user.id))
                             %td= rating.rating
-                            %td= rating.updated_at
+                            %td
+                                = time_ago_in_words(rating.updated_at)
+                                ago
         .col-md-6
             %h3 
                 Average Rating:
