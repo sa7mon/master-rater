@@ -253,6 +253,22 @@ seed_users.each do |a|
     User.create!(a)
 end
 
+seed_albumraters = Array[
+  {:provider => "twitter", :nickname => "@bltjetpack", :uid => 3154330044, 
+  :description => "Hi I'm @bltjetpack", :image => "https://pbs.twimg.com/profile_images/671043988489539584/eel_irZJ_normal.jpg"},
+  {:provider => "twitter", :nickname => "@jack", :uid => 12, 
+  :description => "Hi I'm @jack", :image => "https://pbs.twimg.com/profile_images/839863609345794048/mkpdB9Tf_normal.jpg"},
+  {:provider => "twitter", :nickname => "@chrissyteigen", :uid => 39364684, 
+  :description => "Hi I'm @chrissyteigen", :image => "https://pbs.twimg.com/profile_images/680889019073454080/GMxn5fuf_normal.jpg"},
+  {:provider => "twitter", :nickname => "@achillean", :uid => 9442352, 
+  :description => "Hi I'm @achillean", :image => "https://pbs.twimg.com/profile_images/620062308199305217/zgATSVw8_normal.jpg"}
+]
+
+seed_albumraters.each do |a| 
+    Albumrater.create!(a)
+end
+
+
 def userId(userName) 
   return User.where("username = '#{userName}'").first.id
 end
