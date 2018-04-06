@@ -11,7 +11,8 @@
         %figure.figure
             %img.figure-image.image-fluid.rounded{:src => @user.image}
             %figcaption.figure-caption
-                Joined: March 2016
+                Joined: 
+                =@user.created_at.strftime("%B %Y")
     .col-md-8
         %h2=@user.nickname
         %p 
