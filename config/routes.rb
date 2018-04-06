@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :artists, only: [:index, :show]
   resources :search, only: [:index, :show]
   resources :users, only: [:index, :show]
+  resources :ratings, only: [:create]
   # get 'artists/index'
 
   # get 'artists/show'
