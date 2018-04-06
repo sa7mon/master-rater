@@ -255,12 +255,12 @@ def albumRaterId(nickname)
 end
 
 seed_ratings = Array[
-  {:user_id => albumRaterId('@bltjetpack'), :albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
-  {:user_id => albumRaterId('@bltjetpack'), :albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('American Football'), :rating => 1}, 
-  {:user_id => albumRaterId('@bltjetpack'), :albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('Wildlife'), :rating => 2}, 
-  {:user_id => albumRaterId('@jack'), :albumrater_id => albumRaterId('@jack'), :album_id => albumId('Winter Forever'), :rating => 4},
-  {:user_id => albumRaterId('@achillean'), :albumrater_id => albumRaterId('@achillean'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
-  {:user_id => albumRaterId('@chrissyteigen'), :albumrater_id => albumRaterId('@chrissyteigen'), :album_id => albumId('Winter Forever'), :rating => 3}
+  {:albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
+  {:albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('American Football'), :rating => 1}, 
+  {:albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('Wildlife'), :rating => 2}, 
+  {:albumrater_id => albumRaterId('@jack'), :album_id => albumId('Winter Forever'), :rating => 4},
+  {:albumrater_id => albumRaterId('@achillean'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
+  {:albumrater_id => albumRaterId('@chrissyteigen'), :album_id => albumId('Winter Forever'), :rating => 3}
 ]
 
 # seed_users.each do |user|
