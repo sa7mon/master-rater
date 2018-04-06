@@ -234,24 +234,6 @@ def albumId(albumName)
   return Album.where("name = '#{albumName}'").first.id
 end
 
-seed_users = Array [
-  # bcrypt('password') = $2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu
-  
-  {:username => 'dan', :password_hash => '$2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu',
-  :biography => "I'm Dan."},
-  {:username => 'ikthedar', :password_hash => '$2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu',
-  :biography => "I'm Ikthedar."},
-  {:username => 'aaron', :password_hash => '$2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu',
-  :biography => "I'm Aaron."},
-  {:username => 'ayodele', :password_hash => '$2y$10$aHX62mTF.m1dJzzIg0wkpujCvZmKbEUsRr1sFnkIdANc0lzp1q.uu',
-  :biography => "I'm Ayodele."},
-  
-  # {:username => '', :password_hard => '', :biography => ''}
-]
-
-seed_users.each do |a| 
-    User.create!(a)
-end
 
 seed_albumraters = Array[
   {:provider => "twitter", :nickname => "@bltjetpack", :uid => 3154330044, 
@@ -268,11 +250,6 @@ seed_albumraters.each do |a|
     Albumrater.create!(a)
 end
 
-
-def userId(userName) 
-  return User.where("username = '#{userName}'").first.id
-end
-
 def albumRaterId(nickname)
   return Albumrater.where("nickname = '#{nickname}'").first.id
 end
@@ -282,8 +259,6 @@ seed_ratings = Array[
   {:user_id => albumRaterId('@jack'), :albumrater_id => albumRaterId('@jack'), :album_id => albumId('Winter Forever'), :rating => 4},
   {:user_id => albumRaterId('@achillean'), :albumrater_id => albumRaterId('@achillean'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
   {:user_id => albumRaterId('@chrissyteigen'), :albumrater_id => albumRaterId('@chrissyteigen'), :album_id => albumId('Winter Forever'), :rating => 3}
-  
-  # {:user_id => userId(''), :album_id => albumId(''), :rating => 0}
 ]
 
 # seed_users.each do |user|
@@ -294,5 +269,8 @@ seed_ratings = Array[
 # end
 
 seed_ratings.each do |a|
+  randDate = DateTime.now - (rand * 365)   # Multiple by the maximum number of days ago you want
+  a[:updated_at] = randDate
+  
   Rating.create!(a)
 end
