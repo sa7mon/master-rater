@@ -26,3 +26,7 @@ $(document).on('ready', function(){
 document.getElementById('artistsButton').onclick = function() {
     window.location = '/artits/'; 
 }
+
+function showModal() {
+  document.getElementById('modal').style.display='block';
+}
