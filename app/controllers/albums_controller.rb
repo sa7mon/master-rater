@@ -19,12 +19,12 @@ class AlbumsController < ApplicationController
   end
   
   def show
-     @album = Album.joins(:artist, :genre).where(id: params[:id])
+     @album = Album.joins(:artist, :genre).find_by_id(params[:id])
      
-     if @album.empty?
+    if @album.nil?
         @album = nil
         return
-     end
+    end
         
      @ratings = Rating.joins(:albumrater).where(album_id: params[:id])
      
@@ -43,9 +43,9 @@ class AlbumsController < ApplicationController
      
      # https://github.com/rest-client/rest-client
      # https://musicbrainz.org/doc/Cover_Art_Archive/API#.2Frelease.2F.7Bmbid.7D.2F
-     url = "https://musicbrainz.org/ws/2/release/#{@album.musicbrainz_id}?inc=recordings&fmt=json"
+    url = "https://musicbrainz.org/ws/2/release/#{@album.musicbrainz_id}?inc=recordings&fmt=json"
 
-     baseCoverArtUrl = 'https://coverartarchive.org/release/'
+    baseCoverArtUrl = 'https://coverartarchive.org/release/'
     @coverUrl = baseCoverArtUrl + @album.musicbrainz_id + "/front-500"
     # coverArtRes = RestClient.get(@coverUrl, headers={'User-Agent' => 'Master-Rater/1.0 (salmon@protonmail.ch)'})
 
@@ -59,8 +59,5 @@ class AlbumsController < ApplicationController
       # Conver duration from ms to m:ss
       @tracks.push([track["position"], track["title"], convert_ms(track["length"].to_i)])
     end
-    
-    
-    
   end
 end
