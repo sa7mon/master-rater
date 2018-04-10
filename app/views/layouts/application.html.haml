@@ -35,6 +35,10 @@
         = render :partial => 'sessions/login'
       
   .main
+    - if flash[:notice]
+      %div.notice
+        =flash[:notice]
+    
     .modal{:id => "modal"}
       %br
       %form_tag
