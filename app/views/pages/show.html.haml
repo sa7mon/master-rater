@@ -1,14 +1,15 @@
 .container
     .row
         .col-md-12
-            %h3 Recent Ratings
+            %h3 Recent Albums
             
     .row.justify-content-center
         // .card-deck.col-md-8
-        - 3.times do
+        - i = 0
+        - @recent_album.each do |album|
             .card{:style => '10rem'}
-                %img.card-img-top{:src => 'https://place.cat/c/200/200',
-                                    :alt => 'Card image cap'}
+                =image_tag @recent_album_art_array[i]
+                - i += 1
                 .card-header
                     // Header
                     %i.fas.fa-star
@@ -17,25 +18,26 @@
                     %i.fas.fa-star-half
                 .card-body
                     %h5.card-title
-                        %a{:href=>"#"} Album Name
+                        %a 
+                        = link_to album.name, album_path(album)
                     %p.card-text
                         By: 
-                        %a{:href=>"#"} User
+                        %a
+                        = link_to album.artist.name, artist_path(album.artist)
                     
                 .card-footer.text-muted
-                    12 minutes ago
+                    = time_ago_in_words(album.updated_at)
 
     .row
         .col-md-12
-            %h3 Recent Albums
-            
+            %h3 Recent Ratings
             .row.justify-content-center
                 .card-deck
-                    - 4.times do
-        
+                    - i = 0
+                    - @recent_album_rating.each do |album|
                         .card{:style => '18rem'}
-                            %img.card-img-top{:src => 'https://place.cat/c/200/200',
-                                                :alt => 'Card image cap'}
+                            =image_tag @recent_album_rating_art_array[i]
+                            - i += 1
                             .card-header
                                 // Header
                                 %i.fas.fa-star
@@ -44,14 +46,14 @@
                                 %i.fas.fa-star-half
                             .card-body
                                 %h5.card-title
-                                    Album
+                                    = link_to album.name, album_path(album)
                                 %p.card-text
                                     %strong 
                                         By: 
-                                    Artist
+                                        = link_to album.artist.name, artist_path(album.artist)
                                     %br
                                     %strong
                                         Label: 
-                                    No Sleep Records
+                                        =album.label
                             .card-footer.text-muted
-                                5 days ago
+                                = time_ago_in_words(album.updated_at)

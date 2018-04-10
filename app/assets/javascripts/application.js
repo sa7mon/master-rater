@@ -26,3 +26,12 @@ $(document).on('ready', function(){
 document.getElementById('artistsButton').onclick = function() {
     window.location = '/artits/'; 
 }
+
+function showModal() {
+  document.getElementById('modal').style.display='block';
+}
+
+// Unused as of right now, will be used when we add an exit button to the modal
+function closeModal() {
+      document.getElementById('modal').style.display='none';
+    } 

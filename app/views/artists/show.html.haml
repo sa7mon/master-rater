@@ -1,12 +1,12 @@
 
-- if @albums.empty?
+- if @artist == nil
     %nav.breadcrumbs{"aria-label" => "breadcrumb"}
         %ol.breadcrumb
             %li.breadcrumb-item
                 =link_to('Home', root_path) 
             %li.breadcrumb-item
                 =link_to('Artists', artists_path)
-    %h1 Failed to find an album :(
+    %h1 Failed to find an artist :(
     %img(src="https://img.buzzfeed.com/buzzfeed-static/static/2015-06/24/19/campaign_images/webdr09/this-may-be-this-cutest-saddest-cat-ever-2-4626-1435188004-0_dblbig.jpg")
 - else
     %nav.breadcrumbs{"aria-label" => "breadcrumb"}
