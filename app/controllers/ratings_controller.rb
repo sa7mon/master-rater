@@ -1,11 +1,6 @@
 class RatingsController < ApplicationController
    
-   def isLoggedIn
-      # A naive used logged in check
-      
-      user = Albumrater.where(:id => session[:user_id])
-      return !user.empty?
-   end
+   
    
    def create
       album_id = params[:album_id]
