@@ -1,19 +1,24 @@
 class RatingsController < ApplicationController
    
+   def isLoggedIn
+      # A naive used logged in check
+      
+      user = Albumrater.where(:id => session[:user_id])
+      return !user.empty?
+   end
+   
    def create
-      
-      # A naive user logged in check
-      if session[:user_id] != nil
-         logged_in = true
-      else
-         logged_in = false
-         flash[:notice] = "Error: You must be logged in to rate albums"
-         redirect_to album_url(album_id)
-      end
-      
-      # User is logged in by this point
-      
       album_id = params[:album_id]
+      
+      # DEBUG REMOVE ME
+      # flash[:notice] = "session[:used_id] = #{session[:user_id]}"
+      # redirect_to album_url(album_id) and return
+
+      if not isLoggedIn
+         flash[:notice] = "Error: You must be logged in to rate albums"
+         redirect_to album_url(album_id) and return
+      end
+      # User is logged in by this point
       
       # Either create a new rating or grab the first one
       ratingRecord = Rating.where(:album_id => album_id, 

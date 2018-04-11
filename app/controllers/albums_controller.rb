@@ -19,6 +19,9 @@ class AlbumsController < ApplicationController
   end
   
   def show
+    @loggedIn = isLoggedIn
+          
+      
      @album = Album.joins(:artist, :genre).find_by_id(params[:id])
      
     if @album.nil?

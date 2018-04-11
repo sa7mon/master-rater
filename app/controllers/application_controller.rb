@@ -1,4 +1,11 @@
 class ApplicationController < ActionController::Base
+  
+  def isLoggedIn
+      # A naive used logged in check
+      user = Albumrater.where(:id => session[:user_id])
+      return !user.empty?
+  end
+  
   before_filter :set_current_user
   protected
   def set_current_user
