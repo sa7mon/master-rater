@@ -88,4 +88,8 @@ nav.breadcrumbs {
     border-style: groove;
     border-width: 2px;
     border-color: black;
+    a#close {
+        float: right;
+        padding-right: 10px;
+    }
 }

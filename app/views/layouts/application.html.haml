@@ -28,7 +28,7 @@
         Albums
       %a.nav-link{:href => "/artists"}
         Artists
-      %a.nav-link{:onclick => "showModal()"}
+      %a.nav-link{:href => "javascript:showModal()"}
         Search
     .bottom
       .bottom-content
@@ -40,6 +40,8 @@
         =flash[:notice]
     
     .modal{:id => "modal"}
+      %a{:href => "#", :id => "close", :onclick => "closeModal()"}
+        X
       %br
       %form_tag
         = form_tag(search_index_path, :method => "get", id: "search-form") do
