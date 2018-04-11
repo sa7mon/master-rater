@@ -36,7 +36,10 @@
       
   .main
     - if flash[:notice]
-      %div.notice
+      %div.alert.alert-info.alert-dismissable{:role => "alert"}
+        %button.close{:type => "button", "data-dismiss" => "alert", "aria-label" => "Close"}
+          %span{"aria-hidden" => "true"}
+            &times;
         =flash[:notice]
     
     .modal{:id => "modal"}
