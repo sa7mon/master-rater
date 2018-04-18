@@ -2,6 +2,13 @@ require 'rest-client'
 require 'json'
 
 class AlbumsController < ApplicationController
+  
+  def round_point5(input)
+      # https://stackoverflow.com/a/3837211
+    (input * 2).round / 2.0
+  end
+    
+    
   def index
     # @albums = Album.joins(:artist)
     @albums = Album.joins(:artist, :genre)
@@ -35,15 +42,22 @@ class AlbumsController < ApplicationController
      @ratings.each do |rating|
        ratingSum += rating[:rating]
      end
-     
-     
-    # @avgRating = ratingSum / @ratings.length  # UNCOMMENT AFTER FIGURING OUT USERS
-     @avgRating = 4
-     @ratingStars = ""
-     for i in 0..@avgRating
-       @ratingStars += '<i class="fas fa-star"></i>'
-     end
-     
+    
+    if @ratingSum == 0 or @ratings.count == 0
+        avgRating = 0
+    else
+        avgRating = ratingSum / @ratings.length     
+    end
+    
+    avgRating = round_point5(avgRating)
+    
+    puts "\n################################# avgRating: #{avgRating} #######################\n"
+    
+    parts = avgRating.to_s.split(".")
+    @avgWholeStars = parts[0].to_i
+    @avgHasHalf = parts[1].to_s == "5"
+    
+ 
      # https://github.com/rest-client/rest-client
      # https://musicbrainz.org/doc/Cover_Art_Archive/API#.2Frelease.2F.7Bmbid.7D.2F
     url = "https://musicbrainz.org/ws/2/release/#{@album.musicbrainz_id}?inc=recordings&fmt=json"

@@ -227,6 +227,8 @@ seed_albums = Array[
 ]
 
 seed_albums.each do |a|
+  randDate = DateTime.now - (rand * 365) 
+  a[:updated_at] = randDate
   Album.create!(a)
 end
 

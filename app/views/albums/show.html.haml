@@ -54,10 +54,14 @@
                         = @album.genre.name
                 %h3 
                     Average Rating:
-                    %i.fas.fa-star
-                    %i.fas.fa-star
-                    %i.fas.fa-star
-                    %i.fas.fa-star-half
+                    // %i.fas.fa-star
+                    // %i.fas.fa-star
+                    // %i.fas.fa-star
+                    // %i.fas.fa-star-half
+                    - @avgWholeStars.times do 
+                        %i.fas.fa-star
+                    - if @avgHasHalf
+                        %i.fas.fa-star-half
                 
                 %h3 Ratings
                 %table.table.table-striped

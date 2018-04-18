@@ -8,15 +8,14 @@
 - else
     %h1 All Albums
     
-    %table#albums
-        %thead 
-            %tr
-                %th Artist 
-                %th Album Title
-                %th Total Runtime
-                %th Release Date
-                %th Label
-                %th Genre
+    %table#albums.table.table-striped
+        %thead.thead-dark
+            %th Artist 
+            %th Album Title
+            %th Total Runtime
+            %th Release Date
+            %th Label
+            %th Genre
         %tbody
             - @albums.each do |album|
                 %tr
