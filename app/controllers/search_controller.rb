@@ -7,11 +7,13 @@ class SearchController < ApplicationController
     search = params[:search]
     # Vulnerable to SQL Injection :)
     @albums = Album.where("name LIKE ?", "%#{search}%")
+    @artists = Artist.where("name LIKE ?", "%#{search}%")
     # TODO better failure case than dumping everything
     # if @albums.length < 1 # Only care about failures to search
     #     @albums = Album.joins(:artist, :genre)
     # end
   end
+  
   
   def convert_ms(milliseconds)
     # https://stackoverflow.com/a/40488097

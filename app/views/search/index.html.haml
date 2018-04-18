@@ -1,8 +1,10 @@
 %p
     =link_to('Home', root_path) 
     \/ Albums
-- if @albums.empty?
+- if @albums.empty? 
     %h1 Failed to find any albums containing your search string :(
+- elif @artists.empty?
+    %h1 Failed to find any artist containing your search string :(
 - else
     %h1 All Albums
     
