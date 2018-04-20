@@ -66,6 +66,9 @@ seed_artists = [
     {:name => 'Tiny Moving Parts',
       :biography => "Based out of Benson, Minnesota, emotionally charged screamo/math rock unit Tiny Moving Parts was formed around the talents of Dylan Mattheisen, William Chevalier, and Matthew Chevalier while the trio was still in high school. The band issued its debut EP, Moving to Antarctica, in 2010, followed by the Kind of Like Records-issued full-length This Couch Is Long & Full in 2013. The trio inked a deal with Triple Crown the following year and released their sophomore long-player Pleasant Living. Returning to the studio with This Couch Is Long producer Greg Lindholm, the trio set about recording their third album, Celebrate. Slated for a mid-2016 release, the album would be their second release for Triple Crown and their debut for U.K. label Big Scary Monsters. Tiny Moving Parts returned in 2018 with their fourth record Swell, which was announced with the release of lead single \"Caution.\""
     },
+    {:name => 'Månegarm',
+      :biography => "Månegarm is a Swedish Viking/black metal band from Norrtälje. The band's name is derived from Mánagarmr, a wolf in Norse mythology."
+    },
     # {:name => 'Hostage Calm'}
 ]
 
@@ -84,7 +87,8 @@ seed_genres = Array[
   {:name => 'Folk'},
   {:name => 'Indie Rock'},
   {:name => 'Soul'},
-  {:name => 'Electronic'}
+  {:name => 'Electronic'},
+  {:name => 'Viking Metal'}
 #   {:name => ''}
 ]
 
@@ -110,6 +114,11 @@ seed_albums = Array[
   :label => 'Independent', :total_time => '00:51:00', 
   :artist_id => artistId('Run the Jewels'), :genre_id => genreId('Rap'),
   :musicbrainz_id => '386a689f-7ec4-4c4f-8a0c-fef18124a25f'},
+  
+  {:name => 'Legions Of The North', :release_date => '26-06-2013', 
+  :label => 'Napalm Records', :total_time => '00:50:42', 
+  :artist_id => artistId('Månegarm'), :genre_id => genreId('Viking Metal'),
+  :musicbrainz_id => '78f9009c-a737-471c-bba9-8b54aeae9bd9'},
   
   {:name => 'Run The Jewels 2', :release_date => '24-10-2014', 
   :label => 'Independent', :total_time => '00:39:02', 
