@@ -10,8 +10,7 @@ class AlbumsController < ApplicationController
     
     
   def index
-    # @albums = Album.joins(:artist)
-    @albums = Album.joins(:artist, :genre)
+    @albums = Album.joins(:artist, :genre).order('name ASC')
   end
   
   def convert_ms(milliseconds)
