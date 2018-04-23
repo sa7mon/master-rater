@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def show
     
-    @recent_album = Album.order(:created_at).limit(3)
+    @recent_album = Album.order(:created_at).limit(4)
     @recent_album_art_array = []
     i = 0
     @recent_album.each do |album|

@@ -148,7 +148,7 @@ seed_albums = Array[
   {:name => 'Christmas Island', :release_date => '05-06-2014', 
   :label => 'SideOneDummy Records', :total_time => '00:33:43', 
   :artist_id => artistId('Andrew Jackson Jihad'), :genre_id => genreId('Folk Punk'),
-  :musicbrainz_id => '833a3c79-0280-436e-841b-e2d502350945'},
+  :musicbrainz_id => '9de445cf-865e-4d3c-8c66-c1ae052ea99c'},
   
   {:name => 'Winter Forever', :release_date => '08-11-2011', 
   :label => 'Run For Cover Records', :total_time => '00:37:16', 
