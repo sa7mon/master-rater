@@ -42,7 +42,7 @@
             &times;
         =flash[:notice]
     
-    .modal{:id => "modal"}
+    .searchModal{:id => "modal"}
       %a{:href => "#", :id => "close", :onclick => "closeModal()"}
         X
       %br
@@ -51,6 +51,6 @@
           = text_field_tag :search, params[:search], placeholder: "Search Albums"
           // :name = > "xxx" to be used to determine which button was pressed
           // https://stackoverflow.com/questions/3332449/rails-multi-submit-buttons-in-one-form
-          = submit_tag "Search Albums", :name => "AlbumSearch" 
-          = submit_tag "Search Artists", :name => "ArtistSearch"
+          = submit_tag "🔍", :name => "AlbumSearch", :class => "button"
+          // = submit_tag "Search Artists", :name => "ArtistSearch"
     = yield
