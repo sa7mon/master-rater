@@ -238,14 +238,17 @@ end
 
 
 seed_albumraters = Array[
-  {:provider => "twitter", :nickname => "@bltjetpack", :uid => 3154330044, 
-  :description => "Hi I'm @bltjetpack", :image => "https://pbs.twimg.com/profile_images/671043988489539584/eel_irZJ_normal.jpg"},
+  # {:provider => "twitter", :nickname => "@bltjetpack", :uid => 3154330044, 
+  # :description => "Hi I'm @bltjetpack", :image => "https://pbs.twimg.com/profile_images/671043988489539584/eel_irZJ_normal.jpg"},
   {:provider => "twitter", :nickname => "@jack", :uid => 12, 
   :description => "Hi I'm @jack", :image => "https://pbs.twimg.com/profile_images/839863609345794048/mkpdB9Tf_normal.jpg"},
   {:provider => "twitter", :nickname => "@chrissyteigen", :uid => 39364684, 
   :description => "Hi I'm @chrissyteigen", :image => "https://pbs.twimg.com/profile_images/680889019073454080/GMxn5fuf_normal.jpg"},
   {:provider => "twitter", :nickname => "@achillean", :uid => 9442352, 
-  :description => "Hi I'm @achillean", :image => "https://pbs.twimg.com/profile_images/620062308199305217/zgATSVw8_normal.jpg"}
+  :description => "Hi I'm @achillean", :image => "https://pbs.twimg.com/profile_images/620062308199305217/zgATSVw8_normal.jpg"},
+  {:provider => "twitter", :nickname => "@troyhunt", :uid => 14414286,
+  :description => "Hi I'm @troyhunt", :image => "https://pbs.twimg.com/profile_images/1154092629/Square__small__400x400.jpg"}
+
 ]
 
 seed_albumraters.each do |a| 
@@ -257,9 +260,9 @@ def albumRaterId(nickname)
 end
 
 seed_ratings = Array[
-  {:albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
-  {:albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('American Football'), :rating => 1}, 
-  {:albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('Wildlife'), :rating => 2}, 
+  {:albumrater_id => albumRaterId('@troyhunt'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
+  {:albumrater_id => albumRaterId('@troyhunt'), :album_id => albumId('American Football'), :rating => 1}, 
+  {:albumrater_id => albumRaterId('@troyhunt'), :album_id => albumId('Wildlife'), :rating => 2}, 
   {:albumrater_id => albumRaterId('@jack'), :album_id => albumId('Winter Forever'), :rating => 4},
   {:albumrater_id => albumRaterId('@achillean'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
   {:albumrater_id => albumRaterId('@chrissyteigen'), :album_id => albumId('Winter Forever'), :rating => 3}
