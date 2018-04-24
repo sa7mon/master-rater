@@ -54,10 +54,7 @@
                         = @album.genre.name
                 %h3 
                     Average Rating:
-                    // %i.fas.fa-star
-                    // %i.fas.fa-star
-                    // %i.fas.fa-star
-                    // %i.fas.fa-star-half
+                    
                     - @avgWholeStars.times do 
                         %i.fas.fa-star
                     - if @avgHasHalf
@@ -80,7 +77,6 @@
                                     ago
             .col-md-6
                 
-                    
                 =image_tag @coverUrl
         
         - if @loggedIn

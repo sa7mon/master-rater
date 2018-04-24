@@ -50,7 +50,7 @@ class AlbumsController < ApplicationController
     
     avgRating = round_point5(avgRating)
     
-    puts "\n################################# avgRating: #{avgRating} #######################\n"
+    # puts "\n################################# avgRating: #{avgRating} #######################\n"
     
     parts = avgRating.to_s.split(".")
     @avgWholeStars = parts[0].to_i
