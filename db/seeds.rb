@@ -255,8 +255,8 @@ seed_albumraters = Array[
   :description => "Hi I'm @chrissyteigen", :image => "https://pbs.twimg.com/profile_images/680889019073454080/GMxn5fuf_normal.jpg"},
   {:provider => "twitter", :nickname => "@achillean", :uid => 9442352, 
   :description => "Hi I'm @achillean", :image => "https://pbs.twimg.com/profile_images/620062308199305217/zgATSVw8_normal.jpg"},
-  {:provider => "twitter", :nickname => "@troyhunt", :uid => 14414286,
-  :description => "Hi I'm @troyhunt", :image => "https://pbs.twimg.com/profile_images/1154092629/Square__small__400x400.jpg"}
+  {:provider => "twitter", :nickname => "@briankrebs", :uid => 22790881,
+  :description => "Hi I'm @briankrebs", :image => "https://pbs.twimg.com/profile_images/514861596489699328/vK2q0IV2_normal.png"}
 
 ]
 
@@ -269,9 +269,9 @@ def albumRaterId(nickname)
 end
 
 seed_ratings = Array[
-  {:albumrater_id => albumRaterId('@troyhunt'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
-  {:albumrater_id => albumRaterId('@troyhunt'), :album_id => albumId('American Football'), :rating => 1}, 
-  {:albumrater_id => albumRaterId('@troyhunt'), :album_id => albumId('Wildlife'), :rating => 2}, 
+  {:albumrater_id => albumRaterId('@briankrebs'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
+  {:albumrater_id => albumRaterId('@briankrebs'), :album_id => albumId('American Football'), :rating => 1}, 
+  {:albumrater_id => albumRaterId('@briankrebs'), :album_id => albumId('Wildlife'), :rating => 2}, 
   {:albumrater_id => albumRaterId('@jack'), :album_id => albumId('Winter Forever'), :rating => 4},
   {:albumrater_id => albumRaterId('@achillean'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
   {:albumrater_id => albumRaterId('@chrissyteigen'), :album_id => albumId('Winter Forever'), :rating => 3}
