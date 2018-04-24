@@ -11,11 +11,8 @@
                     =image_tag @recent_album_rating_art_array[i]
                     - i += 1
                     .card-header
-                        // Header
-                        %i.fas.fa-star
-                        %i.fas.fa-star
-                        %i.fas.fa-star
-                        %i.fas.fa-star-half
+                        - rating.rating.times do 
+                            %i.fas.fa-star
                     .card-body
                         %h5.card-title
                             = link_to rating.album.name, album_path(rating.album)
@@ -40,11 +37,10 @@
                     =image_tag @recent_album_art_array[i]
                     - i += 1
                     .card-header
-                        // Header
-                        %i.fas.fa-star
-                        %i.fas.fa-star
-                        %i.fas.fa-star
-                        %i.fas.fa-star-half
+                        - @avgWholeStars.times do 
+                            %i.fas.fa-star
+                        - if @avgHasHalf
+                            %i.fas.fa-star-half
                     .card-body
                         %h5.card-title
                             %a 

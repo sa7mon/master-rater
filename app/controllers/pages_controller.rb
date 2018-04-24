@@ -26,7 +26,7 @@ class PagesController < ApplicationController
      
     # @ratings = Rating.joins(:albumrater).where(album_id: params[:id])
     
-    @recent_album_rating = Rating.joins(:albumrater, :album).order(:updated_at).limit(4)
+    @recent_album_rating = Rating.joins(:albumrater, :album).order('updated_at DESC').limit(4)
     @recent_album_rating_art_array = []
     i = 0
     @recent_album_rating.each do |rating|
@@ -36,22 +36,22 @@ class PagesController < ApplicationController
     end
         
      
-    # ratingSum = 0
-    # @ratings.each do |rating|
-    #   ratingSum += rating[:rating]
-    # end
+    ratingSum = 0
+    @recent_album_rating.each do |rating|
+      ratingSum += rating[:rating]
+    end
     
-    # if @ratingSum == 0 or @ratings.count == 0
-    #     avgRating = 0
-    # else
-    #     avgRating = ratingSum / @ratings.length     
-    # end
+    if @ratingSum == 0 or @recent_album_rating.count == 0
+        avgRating = 0
+    else
+        avgRating = ratingSum / @recent_album_rating.length     
+    end
     
-    # avgRating = round_point5(avgRating)
+    avgRating = round_point5(avgRating)
     
-    # parts = avgRating.to_s.split(".")
-    # @avgWholeStars = parts[0].to_i
-    # @avgHasHalf = parts[1].to_s == "5"
+    parts = avgRating.to_s.split(".")
+    @avgWholeStars = parts[0].to_i
+    @avgHasHalf = parts[1].to_s == "5"
 
     
 
