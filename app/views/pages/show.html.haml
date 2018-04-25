@@ -1,59 +1,62 @@
 .container
     .row
         .col-md-12
-            %h3 Recent Albums
-            
+            %h3 Recent Ratings
+    
     .row.justify-content-center
-        // .card-deck.col-md-8
-        - i = 0
-        - @recent_album.each do |album|
-            .card{:style => '10rem'}
-                =image_tag @recent_album_art_array[i]
-                - i += 1
-                .card-header
-                    // Header
-                    %i.fas.fa-star
-                    %i.fas.fa-star
-                    %i.fas.fa-star
-                    %i.fas.fa-star-half
-                .card-body
-                    %h5.card-title
-                        %a 
-                        = link_to album.name, album_path(album)
-                    %p.card-text
-                        By: 
-                        %a
-                        = link_to album.artist.name, artist_path(album.artist)
-                    
-                .card-footer.text-muted
-                    = time_ago_in_words(album.updated_at)
+        .card-deck.col-md-12
+            - i = 0
+            - @recent_album_rating.each do |rating|
+                .card{:style => '18rem'}
+                    =image_tag @recent_album_rating_art_array[i]
+                    - i += 1
+                    .card-header
+                        - rating.rating.times do 
+                            %i.fas.fa-star
+                    .card-body
+                        %h5.card-title
+                            = link_to rating.album.name, album_path(rating.album)
+                        %p.card-text
+                            %strong 
+                                By: 
+                                = link_to rating.albumrater.nickname, user_path(rating.albumrater.nickname)
+                    .card-footer.text-muted
+                        Rated 
+                        = time_ago_in_words(rating.updated_at)
+                        ago
 
     .row
         .col-md-12
-            %h3 Recent Ratings
-            .row.justify-content-center
-                .card-deck
-                    - i = 0
-                    - @recent_album_rating.each do |album|
-                        .card{:style => '18rem'}
-                            =image_tag @recent_album_rating_art_array[i]
-                            - i += 1
-                            .card-header
-                                // Header
-                                %i.fas.fa-star
-                                %i.fas.fa-star
-                                %i.fas.fa-star
-                                %i.fas.fa-star-half
-                            .card-body
-                                %h5.card-title
-                                    = link_to album.name, album_path(album)
-                                %p.card-text
-                                    %strong 
-                                        By: 
-                                        = link_to album.artist.name, artist_path(album.artist)
-                                    %br
-                                    %strong
-                                        Label: 
-                                        =album.label
-                            .card-footer.text-muted
-                                = time_ago_in_words(album.updated_at)
+            %h3 Recent Albums
+            
+    .row.justify-content-center
+        .card-deck.col-md-12
+            - i = 0
+            - @recent_album.each do |album|
+                .card
+                    =image_tag @recent_album_art_array[i]
+                    - i += 1
+                    .card-header
+                        - @avgWholeStars.times do 
+                            %i.fas.fa-star
+                        - if @avgHasHalf
+                            %i.fas.fa-star-half
+                    .card-body
+                        %h5.card-title
+                            %a 
+                            = link_to album.name, album_path(album)
+                        %p.card-text
+                            %strong
+                                By: 
+                            %a
+                            = link_to album.artist.name, artist_path(album.artist)
+                            %br
+                            %strong
+                                Label: 
+                            =album.label
+                        
+                    .card-footer.text-muted
+                        Added
+                        = time_ago_in_words(album.updated_at)
+                        ago
+

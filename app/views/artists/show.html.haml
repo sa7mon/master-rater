@@ -30,29 +30,29 @@
             .col-md-12
                 %h2 Albums
         .row.justify-content-center
-            .card-deck
+            .card-deck.col-md-12
                 - @albums.each do |album|
-    
-                    .card{:style => '18rem'}
-                        %img.card-img-top{:src => 'https://coverartarchive.org/release/' + album.musicbrainz_id + "/front-250.jpg",
-                                            :alt => 'Card image cap'}
-                        .card-header
-                            // Header
-                            %i.fas.fa-star
-                            %i.fas.fa-star
-                            %i.fas.fa-star
-                            %i.fas.fa-star-half
-                        .card-body
-                            %h5.card-title
-                                =link_to(album.name, album_path(album))
-                            %p.card-text
-                                %strong 
-                                    Released: 
-                                2012
-                                %br
-                                %strong
-                                    Label: 
-                                No Sleep Records
-                        .card-footer.text-muted
-                            =album.ratings.count
-                            Ratings 
+                    .col-md-4
+                        .card
+                            %img.card-img-top{:src => 'https://coverartarchive.org/release/' + album.musicbrainz_id + "/front-500.jpg",
+                                                :alt => 'Card image cap'}
+                            // .card-header
+                            //     // Header
+                            //     %i.fas.fa-star
+                            //     %i.fas.fa-star
+                            //     %i.fas.fa-star
+                            //     %i.fas.fa-star-half
+                            .card-body
+                                %h5.card-title
+                                    =link_to(album.name, album_path(album))
+                                %p.card-text
+                                    %strong 
+                                        Released: 
+                                    2012
+                                    %br
+                                    %strong
+                                        Label: 
+                                    No Sleep Records
+                            .card-footer.text-muted
+                                =album.ratings.count
+                                Ratings 

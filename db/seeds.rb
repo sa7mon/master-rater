@@ -66,6 +66,9 @@ seed_artists = [
     {:name => 'Tiny Moving Parts',
       :biography => "Based out of Benson, Minnesota, emotionally charged screamo/math rock unit Tiny Moving Parts was formed around the talents of Dylan Mattheisen, William Chevalier, and Matthew Chevalier while the trio was still in high school. The band issued its debut EP, Moving to Antarctica, in 2010, followed by the Kind of Like Records-issued full-length This Couch Is Long & Full in 2013. The trio inked a deal with Triple Crown the following year and released their sophomore long-player Pleasant Living. Returning to the studio with This Couch Is Long producer Greg Lindholm, the trio set about recording their third album, Celebrate. Slated for a mid-2016 release, the album would be their second release for Triple Crown and their debut for U.K. label Big Scary Monsters. Tiny Moving Parts returned in 2018 with their fourth record Swell, which was announced with the release of lead single \"Caution.\""
     },
+    {:name => 'Månegarm',
+      :biography => "Månegarm is a Swedish Viking/black metal band from Norrtälje. The band's name is derived from Mánagarmr, a wolf in Norse mythology."
+    },
     # {:name => 'Hostage Calm'}
 ]
 
@@ -84,7 +87,8 @@ seed_genres = Array[
   {:name => 'Folk'},
   {:name => 'Indie Rock'},
   {:name => 'Soul'},
-  {:name => 'Electronic'}
+  {:name => 'Electronic'},
+  {:name => 'Viking Metal'}
 #   {:name => ''}
 ]
 
@@ -110,6 +114,11 @@ seed_albums = Array[
   :label => 'Independent', :total_time => '00:51:00', 
   :artist_id => artistId('Run the Jewels'), :genre_id => genreId('Rap'),
   :musicbrainz_id => '386a689f-7ec4-4c4f-8a0c-fef18124a25f'},
+  
+  {:name => 'Legions Of The North', :release_date => '26-06-2013', 
+  :label => 'Napalm Records', :total_time => '00:50:42', 
+  :artist_id => artistId('Månegarm'), :genre_id => genreId('Viking Metal'),
+  :musicbrainz_id => '78f9009c-a737-471c-bba9-8b54aeae9bd9'},
   
   {:name => 'Run The Jewels 2', :release_date => '24-10-2014', 
   :label => 'Independent', :total_time => '00:39:02', 
@@ -139,7 +148,7 @@ seed_albums = Array[
   {:name => 'Christmas Island', :release_date => '05-06-2014', 
   :label => 'SideOneDummy Records', :total_time => '00:33:43', 
   :artist_id => artistId('Andrew Jackson Jihad'), :genre_id => genreId('Folk Punk'),
-  :musicbrainz_id => '833a3c79-0280-436e-841b-e2d502350945'},
+  :musicbrainz_id => '9de445cf-865e-4d3c-8c66-c1ae052ea99c'},
   
   {:name => 'Winter Forever', :release_date => '08-11-2011', 
   :label => 'Run For Cover Records', :total_time => '00:37:16', 
@@ -238,14 +247,17 @@ end
 
 
 seed_albumraters = Array[
-  {:provider => "twitter", :nickname => "@bltjetpack", :uid => 3154330044, 
-  :description => "Hi I'm @bltjetpack", :image => "https://pbs.twimg.com/profile_images/671043988489539584/eel_irZJ_normal.jpg"},
+  # {:provider => "twitter", :nickname => "@bltjetpack", :uid => 3154330044, 
+  # :description => "Hi I'm @bltjetpack", :image => "https://pbs.twimg.com/profile_images/671043988489539584/eel_irZJ_normal.jpg"},
   {:provider => "twitter", :nickname => "@jack", :uid => 12, 
   :description => "Hi I'm @jack", :image => "https://pbs.twimg.com/profile_images/839863609345794048/mkpdB9Tf_normal.jpg"},
   {:provider => "twitter", :nickname => "@chrissyteigen", :uid => 39364684, 
   :description => "Hi I'm @chrissyteigen", :image => "https://pbs.twimg.com/profile_images/680889019073454080/GMxn5fuf_normal.jpg"},
   {:provider => "twitter", :nickname => "@achillean", :uid => 9442352, 
-  :description => "Hi I'm @achillean", :image => "https://pbs.twimg.com/profile_images/620062308199305217/zgATSVw8_normal.jpg"}
+  :description => "Hi I'm @achillean", :image => "https://pbs.twimg.com/profile_images/620062308199305217/zgATSVw8_normal.jpg"},
+  {:provider => "twitter", :nickname => "@briankrebs", :uid => 22790881,
+  :description => "Hi I'm @briankrebs", :image => "https://pbs.twimg.com/profile_images/514861596489699328/vK2q0IV2_normal.png"}
+
 ]
 
 seed_albumraters.each do |a| 
@@ -257,9 +269,9 @@ def albumRaterId(nickname)
 end
 
 seed_ratings = Array[
-  {:albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
-  {:albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('American Football'), :rating => 1}, 
-  {:albumrater_id => albumRaterId('@bltjetpack'), :album_id => albumId('Wildlife'), :rating => 2}, 
+  {:albumrater_id => albumRaterId('@briankrebs'), :album_id => albumId('Run The Jewels 3'), :rating => 5},  
+  {:albumrater_id => albumRaterId('@briankrebs'), :album_id => albumId('American Football'), :rating => 1}, 
+  {:albumrater_id => albumRaterId('@briankrebs'), :album_id => albumId('Wildlife'), :rating => 2}, 
   {:albumrater_id => albumRaterId('@jack'), :album_id => albumId('Winter Forever'), :rating => 4},
   {:albumrater_id => albumRaterId('@achillean'), :album_id => albumId('Run The Jewels 3'), :rating => 2},
   {:albumrater_id => albumRaterId('@chrissyteigen'), :album_id => albumId('Winter Forever'), :rating => 3}
