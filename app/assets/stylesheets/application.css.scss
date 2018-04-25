@@ -81,8 +81,8 @@ nav.breadcrumbs {
     min-height: 100px;
     margin: auto;
     position: fixed;
-    top: 0;
-    bottom: 75%;
+    top: 15%;
+    bottom: 0;
     left: 0;
     right: 0;
     background: #444;
@@ -95,10 +95,23 @@ nav.breadcrumbs {
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
     box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
     z-index: 1050;
+    padding-left: 15px;
+    padding-bottom: 10px;
     a#close {
         float: right;
         padding-right: 10px;
     }
+    input#search {
+        // width: 75%;
+    }
+    input#submit_search {
+        width: 15%;
+    }
+    select {
+        float: right;
+        margin-right: 5%;
+    }
+    
     
 }
 

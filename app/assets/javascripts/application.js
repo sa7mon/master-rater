@@ -28,7 +28,7 @@ document.getElementById('artistsButton').onclick = function() {
 }
 
 function showModal() {
-  document.getElementById('modal').style.display='block';
+  document.getElementById('modal').style.display='inline-table';
 }
 
 // Unused as of right now, will be used when we add an exit button to the modal
