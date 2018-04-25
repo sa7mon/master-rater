@@ -1,10 +1,11 @@
 %p
     =link_to('Home', root_path) 
     \/ Albums
-- if @albums.empty? 
-    %h1 Failed to find any album containing your search string :(
-- else
-    %h1 All Albums
+- if @albums.blank? 
+    - if @searchType == "1"
+        %h1 Failed to find any album containing "#{@search}" :(
+- elsif @searchType == "1"
+    %h1 Albums containing "#{@search}"
     
     %table#albums.table.table-striped
         %thead.thead-dark
@@ -23,10 +24,13 @@
                     %td= album.release_date
                     %td= album.label
                     %td= album.genre.name
-- if @artists.empty? 
-    %h1 Failed to find any artist containing your search string :(
-- else
-    %h1 All Artists
+
+
+- if @artists.blank?
+    - if @searchType == "2"
+        %h1 Failed to find any artist containing "#{@search}" :(
+- elsif @searchType == "2"
+    %h1 Artists containing "#{@search}"
                 
     %ul
         - @artists.each do |artist|

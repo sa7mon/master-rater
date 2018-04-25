@@ -4,10 +4,16 @@ require 'json'
 class SearchController < ApplicationController
   def index
     # https://stackoverflow.com/questions/34706919/using-multiple-like-statements-in-an-activerecord-query
-    search = params[:search]
+    @search = params[:search]
+    @searchType = params[:byWhat]
+    
     # Vulnerable to SQL Injection :)
-    @albums = Album.where("name LIKE ?", "%#{search}%")
-    @artists = Artist.where("name LIKE ?", "%#{search}%")
+    if @searchType == "1"
+      @albums = Album.where("name LIKE ?", "%#{@search}%")
+    end
+    if @searchType == "2"
+      @artists = Artist.where("name LIKE ?", "%#{@search}%")
+    end
     # TODO better failure case than dumping everything
     # if @albums.length < 1 # Only care about failures to search
     #     @albums = Album.joins(:artist, :genre)
