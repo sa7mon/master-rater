@@ -2,9 +2,7 @@
     =link_to('Home', root_path) 
     \/ Albums
 - if @albums.empty? 
-    %h1 Failed to find any albums containing your search string :(
-- elif @artists.empty?
-    %h1 Failed to find any artist containing your search string :(
+    %h1 Failed to find any album containing your search string :(
 - else
     %h1 All Albums
     
@@ -25,3 +23,11 @@
                     %td= album.release_date
                     %td= album.label
                     %td= album.genre.name
+- if @artists.empty? 
+    %h1 Failed to find any artist containing your search string :(
+- else
+    %h1 All Artists
+                
+    %ul
+        - @artists.each do |artist|
+            %li= link_to artist.name, artist_path(artist)
