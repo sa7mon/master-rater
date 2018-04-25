@@ -1,6 +1,6 @@
 When(/^I go to the album page for "(.*)"$/) do |albumName|
     visit album_path(Album.where(:name => albumName).first.id)
-    assert page.has_content?("Run The Jewels 3")
+    assert page.has_content?(albumName)
 end
 
 When(/^I go to the homepage$/) do

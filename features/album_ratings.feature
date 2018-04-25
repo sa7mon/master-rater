@@ -8,3 +8,5 @@ Given the database is seeded
 When I go to the album page for "Run The Jewels 3"
 Then I should see a rating of "5" from "@briankrebs"
 And I should see a rating of "2" from "@achillean"
+When I go to the album page for "Winter Forever"
+Then I should see a rating of "4" from "@jack"
